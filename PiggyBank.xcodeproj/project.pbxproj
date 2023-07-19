@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		70964C812A686D4B00C2F2DF /* PiggyBankApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70964C802A686D4B00C2F2DF /* PiggyBankApp.swift */; };
+		70964C832A686D4B00C2F2DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70964C822A686D4B00C2F2DF /* ContentView.swift */; };
+		70964C852A686D4B00C2F2DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70964C842A686D4B00C2F2DF /* Assets.xcassets */; };
+		70964C882A686D4B00C2F2DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70964C872A686D4B00C2F2DF /* Preview Assets.xcassets */; };
+		70964C922A686D4B00C2F2DF /* PiggyBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70964C912A686D4B00C2F2DF /* PiggyBankTests.swift */; };
+		70964C9C2A686D4C00C2F2DF /* PiggyBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70964C9B2A686D4C00C2F2DF /* PiggyBankUITests.swift */; };
+		70964C9E2A686D4C00C2F2DF /* PiggyBankUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70964C9D2A686D4C00C2F2DF /* PiggyBankUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		70964C8E2A686D4B00C2F2DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70964C752A686D4B00C2F2DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70964C7C2A686D4B00C2F2DF;
+			remoteInfo = PiggyBank;
+		};
+		70964C982A686D4C00C2F2DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70964C752A686D4B00C2F2DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70964C7C2A686D4B00C2F2DF;
+			remoteInfo = PiggyBank;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		70964C7D2A686D4B00C2F2DF /* PiggyBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiggyBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		70964C802A686D4B00C2F2DF /* PiggyBankApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiggyBankApp.swift; sourceTree = "<group>"; };
+		70964C822A686D4B00C2F2DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		70964C842A686D4B00C2F2DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		70964C872A686D4B00C2F2DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		70964C8D2A686D4B00C2F2DF /* PiggyBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PiggyBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70964C912A686D4B00C2F2DF /* PiggyBankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiggyBankTests.swift; sourceTree = "<group>"; };
+		70964C972A686D4C00C2F2DF /* PiggyBankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PiggyBankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70964C9B2A686D4C00C2F2DF /* PiggyBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiggyBankUITests.swift; sourceTree = "<group>"; };
+		70964C9D2A686D4C00C2F2DF /* PiggyBankUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiggyBankUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		70964C7A2A686D4B00C2F2DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70964C8A2A686D4B00C2F2DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70964C942A686D4C00C2F2DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		70964C742A686D4B00C2F2DF = {
+			isa = PBXGroup;
+			children = (
+				70964C7F2A686D4B00C2F2DF /* PiggyBank */,
+				70964C902A686D4B00C2F2DF /* PiggyBankTests */,
+				70964C9A2A686D4C00C2F2DF /* PiggyBankUITests */,
+				70964C7E2A686D4B00C2F2DF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		70964C7E2A686D4B00C2F2DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70964C7D2A686D4B00C2F2DF /* PiggyBank.app */,
+				70964C8D2A686D4B00C2F2DF /* PiggyBankTests.xctest */,
+				70964C972A686D4C00C2F2DF /* PiggyBankUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		70964C7F2A686D4B00C2F2DF /* PiggyBank */ = {
+			isa = PBXGroup;
+			children = (
+				70964C802A686D4B00C2F2DF /* PiggyBankApp.swift */,
+				70964C822A686D4B00C2F2DF /* ContentView.swift */,
+				70964C842A686D4B00C2F2DF /* Assets.xcassets */,
+				70964C862A686D4B00C2F2DF /* Preview Content */,
+			);
+			path = PiggyBank;
+			sourceTree = "<group>";
+		};
+		70964C862A686D4B00C2F2DF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				70964C872A686D4B00C2F2DF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		70964C902A686D4B00C2F2DF /* PiggyBankTests */ = {
+			isa = PBXGroup;
+			children = (
+				70964C912A686D4B00C2F2DF /* PiggyBankTests.swift */,
+			);
+			path = PiggyBankTests;
+			sourceTree = "<group>";
+		};
+		70964C9A2A686D4C00C2F2DF /* PiggyBankUITests */ = {
+			isa = PBXGroup;
+			children = (
+				70964C9B2A686D4C00C2F2DF /* PiggyBankUITests.swift */,
+				70964C9D2A686D4C00C2F2DF /* PiggyBankUITestsLaunchTests.swift */,
+			);
+			path = PiggyBankUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		70964C7C2A686D4B00C2F2DF /* PiggyBank */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70964CA12A686D4C00C2F2DF /* Build configuration list for PBXNativeTarget "PiggyBank" */;
+			buildPhases = (
+				70964C792A686D4B00C2F2DF /* Sources */,
+				70964C7A2A686D4B00C2F2DF /* Frameworks */,
+				70964C7B2A686D4B00C2F2DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PiggyBank;
+			productName = PiggyBank;
+			productReference = 70964C7D2A686D4B00C2F2DF /* PiggyBank.app */;
+			productType = "com.apple.product-type.application";
+		};
+		70964C8C2A686D4B00C2F2DF /* PiggyBankTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70964CA42A686D4C00C2F2DF /* Build configuration list for PBXNativeTarget "PiggyBankTests" */;
+			buildPhases = (
+				70964C892A686D4B00C2F2DF /* Sources */,
+				70964C8A2A686D4B00C2F2DF /* Frameworks */,
+				70964C8B2A686D4B00C2F2DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70964C8F2A686D4B00C2F2DF /* PBXTargetDependency */,
+			);
+			name = PiggyBankTests;
+			productName = PiggyBankTests;
+			productReference = 70964C8D2A686D4B00C2F2DF /* PiggyBankTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		70964C962A686D4C00C2F2DF /* PiggyBankUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70964CA72A686D4C00C2F2DF /* Build configuration list for PBXNativeTarget "PiggyBankUITests" */;
+			buildPhases = (
+				70964C932A686D4C00C2F2DF /* Sources */,
+				70964C942A686D4C00C2F2DF /* Frameworks */,
+				70964C952A686D4C00C2F2DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70964C992A686D4C00C2F2DF /* PBXTargetDependency */,
+			);
+			name = PiggyBankUITests;
+			productName = PiggyBankUITests;
+			productReference = 70964C972A686D4C00C2F2DF /* PiggyBankUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		70964C752A686D4B00C2F2DF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					70964C7C2A686D4B00C2F2DF = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					70964C8C2A686D4B00C2F2DF = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 70964C7C2A686D4B00C2F2DF;
+					};
+					70964C962A686D4C00C2F2DF = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 70964C7C2A686D4B00C2F2DF;
+					};
+				};
+			};
+			buildConfigurationList = 70964C782A686D4B00C2F2DF /* Build configuration list for PBXProject "PiggyBank" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 70964C742A686D4B00C2F2DF;
+			productRefGroup = 70964C7E2A686D4B00C2F2DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				70964C7C2A686D4B00C2F2DF /* PiggyBank */,
+				70964C8C2A686D4B00C2F2DF /* PiggyBankTests */,
+				70964C962A686D4C00C2F2DF /* PiggyBankUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		70964C7B2A686D4B00C2F2DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70964C882A686D4B00C2F2DF /* Preview Assets.xcassets in Resources */,
+				70964C852A686D4B00C2F2DF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70964C8B2A686D4B00C2F2DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70964C952A686D4C00C2F2DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70964C792A686D4B00C2F2DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70964C832A686D4B00C2F2DF /* ContentView.swift in Sources */,
+				70964C812A686D4B00C2F2DF /* PiggyBankApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70964C892A686D4B00C2F2DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70964C922A686D4B00C2F2DF /* PiggyBankTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70964C932A686D4C00C2F2DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70964C9C2A686D4C00C2F2DF /* PiggyBankUITests.swift in Sources */,
+				70964C9E2A686D4C00C2F2DF /* PiggyBankUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		70964C8F2A686D4B00C2F2DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70964C7C2A686D4B00C2F2DF /* PiggyBank */;
+			targetProxy = 70964C8E2A686D4B00C2F2DF /* PBXContainerItemProxy */;
+		};
+		70964C992A686D4C00C2F2DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70964C7C2A686D4B00C2F2DF /* PiggyBank */;
+			targetProxy = 70964C982A686D4C00C2F2DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		70964C9F2A686D4C00C2F2DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		70964CA02A686D4C00C2F2DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		70964CA22A686D4C00C2F2DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PiggyBank/Preview Content\"";
+				DEVELOPMENT_TEAM = 27DU3FB9N5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.proutechos.sandbox.cli.tests.PiggyBank;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		70964CA32A686D4C00C2F2DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PiggyBank/Preview Content\"";
+				DEVELOPMENT_TEAM = 27DU3FB9N5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.proutechos.sandbox.cli.tests.PiggyBank;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		70964CA52A686D4C00C2F2DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 27DU3FB9N5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.proutechos.sandbox.cli.tests.PiggyBankTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PiggyBank.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PiggyBank";
+			};
+			name = Debug;
+		};
+		70964CA62A686D4C00C2F2DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 27DU3FB9N5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.proutechos.sandbox.cli.tests.PiggyBankTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PiggyBank.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PiggyBank";
+			};
+			name = Release;
+		};
+		70964CA82A686D4C00C2F2DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 27DU3FB9N5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.proutechos.sandbox.cli.tests.PiggyBankUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PiggyBank;
+			};
+			name = Debug;
+		};
+		70964CA92A686D4C00C2F2DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 27DU3FB9N5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.proutechos.sandbox.cli.tests.PiggyBankUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PiggyBank;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70964C782A686D4B00C2F2DF /* Build configuration list for PBXProject "PiggyBank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70964C9F2A686D4C00C2F2DF /* Debug */,
+				70964CA02A686D4C00C2F2DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70964CA12A686D4C00C2F2DF /* Build configuration list for PBXNativeTarget "PiggyBank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70964CA22A686D4C00C2F2DF /* Debug */,
+				70964CA32A686D4C00C2F2DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70964CA42A686D4C00C2F2DF /* Build configuration list for PBXNativeTarget "PiggyBankTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70964CA52A686D4C00C2F2DF /* Debug */,
+				70964CA62A686D4C00C2F2DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70964CA72A686D4C00C2F2DF /* Build configuration list for PBXNativeTarget "PiggyBankUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70964CA82A686D4C00C2F2DF /* Debug */,
+				70964CA92A686D4C00C2F2DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 70964C752A686D4B00C2F2DF /* Project object */;
+}
