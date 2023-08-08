@@ -11,7 +11,8 @@ import SwiftUI
 struct PiggyBankApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BigRootView()
+                .environmentObject(BigModel())
         }
     }
 }

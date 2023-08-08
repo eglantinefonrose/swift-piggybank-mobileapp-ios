@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7077E7BD2A6AE26D002B445B /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 7077E7BC2A6AE26D002B445B /* Readme.md */; };
 		70964C812A686D4B00C2F2DF /* PiggyBankApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70964C802A686D4B00C2F2DF /* PiggyBankApp.swift */; };
 		70964C832A686D4B00C2F2DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70964C822A686D4B00C2F2DF /* ContentView.swift */; };
 		70964C852A686D4B00C2F2DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70964C842A686D4B00C2F2DF /* Assets.xcassets */; };
@@ -14,6 +15,15 @@
 		70964C922A686D4B00C2F2DF /* PiggyBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70964C912A686D4B00C2F2DF /* PiggyBankTests.swift */; };
 		70964C9C2A686D4C00C2F2DF /* PiggyBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70964C9B2A686D4C00C2F2DF /* PiggyBankUITests.swift */; };
 		70964C9E2A686D4C00C2F2DF /* PiggyBankUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70964C9D2A686D4C00C2F2DF /* PiggyBankUITestsLaunchTests.swift */; };
+		70964CAC2A687C5F00C2F2DF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 70964CAB2A687C5F00C2F2DF /* FirebaseAuth */; };
+		70964CAE2A69A6E500C2F2DF /* ViewEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70964CAD2A69A6E500C2F2DF /* ViewEnum.swift */; };
+		70964CB22A69AAED00C2F2DF /* HomePiggyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70964CB12A69AAED00C2F2DF /* HomePiggyScreen.swift */; };
+		70E39C452A69D36900506F02 /* AddMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E39C442A69D36900506F02 /* AddMoneyView.swift */; };
+		70E39C472A69DBFA00506F02 /* BigRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E39C462A69DBFA00506F02 /* BigRootView.swift */; };
+		70E39C492A69DC0C00506F02 /* BigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E39C482A69DC0C00506F02 /* BigModel.swift */; };
+		70F27F3C2A81390B0034FF05 /* DB_Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F27F3B2A81390B0034FF05 /* DB_Manager.swift */; };
+		70F27F3F2A813BC80034FF05 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 70F27F3E2A813BC80034FF05 /* SQLite */; };
+		70F27F412A818C720034FF05 /* BankAccountDTOModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F27F402A818C720034FF05 /* BankAccountDTOModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7077E7BC2A6AE26D002B445B /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		70964C7D2A686D4B00C2F2DF /* PiggyBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiggyBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70964C802A686D4B00C2F2DF /* PiggyBankApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiggyBankApp.swift; sourceTree = "<group>"; };
 		70964C822A686D4B00C2F2DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +55,13 @@
 		70964C972A686D4C00C2F2DF /* PiggyBankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PiggyBankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70964C9B2A686D4C00C2F2DF /* PiggyBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiggyBankUITests.swift; sourceTree = "<group>"; };
 		70964C9D2A686D4C00C2F2DF /* PiggyBankUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiggyBankUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		70964CAD2A69A6E500C2F2DF /* ViewEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEnum.swift; sourceTree = "<group>"; };
+		70964CB12A69AAED00C2F2DF /* HomePiggyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePiggyScreen.swift; sourceTree = "<group>"; };
+		70E39C442A69D36900506F02 /* AddMoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoneyView.swift; sourceTree = "<group>"; };
+		70E39C462A69DBFA00506F02 /* BigRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigRootView.swift; sourceTree = "<group>"; };
+		70E39C482A69DC0C00506F02 /* BigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigModel.swift; sourceTree = "<group>"; };
+		70F27F3B2A81390B0034FF05 /* DB_Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB_Manager.swift; sourceTree = "<group>"; };
+		70F27F402A818C720034FF05 /* BankAccountDTOModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountDTOModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70F27F3F2A813BC80034FF05 /* SQLite in Frameworks */,
+				70964CAC2A687C5F00C2F2DF /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +94,7 @@
 		70964C742A686D4B00C2F2DF = {
 			isa = PBXGroup;
 			children = (
+				7077E7BC2A6AE26D002B445B /* Readme.md */,
 				70964C7F2A686D4B00C2F2DF /* PiggyBank */,
 				70964C902A686D4B00C2F2DF /* PiggyBankTests */,
 				70964C9A2A686D4C00C2F2DF /* PiggyBankUITests */,
@@ -96,6 +117,13 @@
 			children = (
 				70964C802A686D4B00C2F2DF /* PiggyBankApp.swift */,
 				70964C822A686D4B00C2F2DF /* ContentView.swift */,
+				70E39C442A69D36900506F02 /* AddMoneyView.swift */,
+				70F27F402A818C720034FF05 /* BankAccountDTOModel.swift */,
+				70F27F3B2A81390B0034FF05 /* DB_Manager.swift */,
+				70964CAD2A69A6E500C2F2DF /* ViewEnum.swift */,
+				70E39C462A69DBFA00506F02 /* BigRootView.swift */,
+				70E39C482A69DC0C00506F02 /* BigModel.swift */,
+				70964CB12A69AAED00C2F2DF /* HomePiggyScreen.swift */,
 				70964C842A686D4B00C2F2DF /* Assets.xcassets */,
 				70964C862A686D4B00C2F2DF /* Preview Content */,
 			);
@@ -143,6 +171,10 @@
 			dependencies = (
 			);
 			name = PiggyBank;
+			packageProductDependencies = (
+				70964CAB2A687C5F00C2F2DF /* FirebaseAuth */,
+				70F27F3E2A813BC80034FF05 /* SQLite */,
+			);
 			productName = PiggyBank;
 			productReference = 70964C7D2A686D4B00C2F2DF /* PiggyBank.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +247,10 @@
 				Base,
 			);
 			mainGroup = 70964C742A686D4B00C2F2DF;
+			packageReferences = (
+				70964CAA2A687C5F00C2F2DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				70F27F3D2A813BC80034FF05 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+			);
 			productRefGroup = 70964C7E2A686D4B00C2F2DF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +269,7 @@
 			files = (
 				70964C882A686D4B00C2F2DF /* Preview Assets.xcassets in Resources */,
 				70964C852A686D4B00C2F2DF /* Assets.xcassets in Resources */,
+				7077E7BD2A6AE26D002B445B /* Readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +294,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70E39C492A69DC0C00506F02 /* BigModel.swift in Sources */,
+				70E39C452A69D36900506F02 /* AddMoneyView.swift in Sources */,
+				70E39C472A69DBFA00506F02 /* BigRootView.swift in Sources */,
+				70F27F3C2A81390B0034FF05 /* DB_Manager.swift in Sources */,
 				70964C832A686D4B00C2F2DF /* ContentView.swift in Sources */,
+				70964CB22A69AAED00C2F2DF /* HomePiggyScreen.swift in Sources */,
+				70964CAE2A69A6E500C2F2DF /* ViewEnum.swift in Sources */,
 				70964C812A686D4B00C2F2DF /* PiggyBankApp.swift in Sources */,
+				70F27F412A818C720034FF05 /* BankAccountDTOModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +627,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		70964CAA2A687C5F00C2F2DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		70F27F3D2A813BC80034FF05 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		70964CAB2A687C5F00C2F2DF /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70964CAA2A687C5F00C2F2DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		70F27F3E2A813BC80034FF05 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70F27F3D2A813BC80034FF05 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 70964C752A686D4B00C2F2DF /* Project object */;
 }
