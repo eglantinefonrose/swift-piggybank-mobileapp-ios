@@ -22,13 +22,12 @@ class DB_Manager {
     
     init () {
         do {
-            let path: String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first ?? ""
-            db = try Connection("\(path)/PiggyDataBase.db")
+            db = try Connection("/Users/eglantine/Dev/0.perso/2.Proutechos/PiggyBank/PiggyDataBase.db")
             bankAccountsDTO = Table("BankAccountDTO")
             accountId = Expression<Int64>("accountId")
             firstName = Expression<String>("firstName")
             lastName = Expression<String>("lastName")
-            //accountBalance = Expression<Float64>("accountBalance")
+            accountBalance = Expression<Float64>("accountBalance")
             currency = Expression<String>("currency")
             isOverdraftAllowed = Expression<Int64>("isOverdraftAllowed")
             overDraftLimit = Expression<Float64>("overdraftLimit")
@@ -43,6 +42,26 @@ class DB_Manager {
                     t.column(isOverdraftAllowed)
                     t.column(overDraftLimit)
                 })
+                
+                try db.run(bankAccountsDTO.insert (
+                    accountId <- Int64(Int.random(in: 0..<10000000)),
+                    firstName <- "Malo",
+                    lastName <- "Fonrose",
+                    accountBalance <- 0,
+                    currency <- "EUR",
+                    isOverdraftAllowed <- 0,
+                    overDraftLimit <- 0
+                ))
+                
+                try db.run(bankAccountsDTO.insert (
+                    accountId <- Int64(Int.random(in: 0..<10000000)),
+                    firstName <- "Eglantine",
+                    lastName <- "Fonrose",
+                    accountBalance <- 0,
+                    currency <- "EUR",
+                    isOverdraftAllowed <- 0,
+                    overDraftLimit <- 0
+                ))
                 
                 UserDefaults.standard.set(true, forKey: "is_db_created")
                 

@@ -33,5 +33,6 @@ struct BigRootView: View {
 struct BigRootView_Previews: PreviewProvider {
     static var previews: some View {
         BigRootView()
+            .environmentObject(BigModel())
     }
 }

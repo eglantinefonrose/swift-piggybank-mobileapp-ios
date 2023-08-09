@@ -73,19 +73,19 @@ struct ContentView: View {
                             .foregroundColor(Color.white)
                             .fontWeight(.semibold)
                             .padding(7)
-                            .onTapGesture {
-                                bigModel.makePayment()
-                                for i in 0...bigModel.bankAccountsDTO.count {
-                                    print("name = \(bigModel.bankAccountsDTO[i].firstName)")
-                                    print(bigModel.bankAccountsDTO.count)
-                                    print("❤️‍🔥")
-                                }
-                            }
                     Spacer()
                 }.background(Color.blue)
                 .cornerRadius(15)
                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                 .onTapGesture {
+                    
+                    bigModel.makePayment()
+                    for i in 0..<bigModel.bankAccountsDTO.count {
+                        print("name = \(bigModel.bankAccountsDTO[i].firstName)")
+                        print(bigModel.bankAccountsDTO.count)
+                        print("❤️‍🔥")
+                    }
+                    
                     bigModel.currentView = .HomePiggyScreen
                 }
                 
@@ -100,5 +100,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(BigModel())
     }
 }
