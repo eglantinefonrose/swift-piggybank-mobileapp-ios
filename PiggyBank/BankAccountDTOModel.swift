@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-class BankAccountDTOModel: Codable {
-    public var firstName: String = ""
-    public var accountId: Int64 = 0
-    public var lastName: String = ""
-    public var accountBalance: Float64 = 0
-    public var currency: String = ""
-    public var isOverdraftAllowed: Int64 = 0
-    public var overDraftLimit: Float64 = 0
+struct BankAccountDTOModel: Codable {
+    
+    var accountId: String = ""
+    var accountBalance: Float64 = 0
+    var currency: String = ""
+    var firstName: String = ""
+    var lastName: String = ""
+    var isOverdraftAllowed: Int = 0
+    var overDraftLimit: Float?
 }

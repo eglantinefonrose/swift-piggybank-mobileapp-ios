@@ -17,8 +17,8 @@ struct HomePiggyScreen: View {
                 ZStack {
                     Circle()
                         .frame(width: 30, height: 30)
-                        .foregroundColor(.brown)
-                    Text("EF")
+                        .foregroundColor(.blue)
+                    Text("\(String(bigModel.currentUser?.firstName.prefix(1) ?? ""))\(String(bigModel.currentUser?.lastName.prefix(1) ?? ""))")
                         .font(.caption)
                         .bold()
                         .foregroundColor(.white)
@@ -99,5 +99,6 @@ struct HomePiggyScreen: View {
 struct HomePiggyScreen_Previews: PreviewProvider {
     static var previews: some View {
         HomePiggyScreen()
+            .environmentObject(BigModel())
     }
 }

@@ -78,20 +78,14 @@ struct ContentView: View {
                 .cornerRadius(15)
                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                 .onTapGesture {
-                    
-                    bigModel.makePayment()
-                    for i in 0..<bigModel.bankAccountsDTO.count {
-                        print("name = \(bigModel.bankAccountsDTO[i].firstName)")
-                        print(bigModel.bankAccountsDTO.count)
-                        print("❤️‍🔥")
+                    Task {
+                        await bigModel.getBankAccountDTO(accountId: userName)
                     }
-                    
-                    bigModel.currentView = .HomePiggyScreen
                 }
                 
             }
         }.onAppear(perform: {
-            bigModel.bankAccountsDTO = DB_Manager().getBankAccountsDTO()
+            
         })
         
     }
