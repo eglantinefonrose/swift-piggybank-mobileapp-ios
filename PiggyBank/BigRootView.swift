@@ -24,6 +24,9 @@ struct BigRootView: View {
             if (bigModel.currentView == .AddMoneyScreen) {
                 AddMoneyView()
             }
+            if (bigModel.currentView == .SendMoneyScreen) {
+                SendMoneyView()
+            }
             
         }
         

@@ -44,10 +44,14 @@ struct SendMoneyView: View {
                 
                 VStack(spacing: 20) {
                     HStack {
+                        
                         Text("EUR")
                             .font(.title)
+                        
                         Image(systemName: "chevron.down")
+                        
                         Spacer()
+                        
                         TextField("", text: $moneyAmount)
                             .focused($focused, equals: true)
                             .onAppear {
@@ -57,6 +61,8 @@ struct SendMoneyView: View {
                             }
                             .multilineTextAlignment(.trailing)
                             .font(.title)
+                            .keyboardType(.decimalPad)
+                        
                     }
                     HStack {
                         Text("Solde : \(bigModel.currentUser?.accountBalance ?? 0)")
@@ -69,17 +75,20 @@ struct SendMoneyView: View {
             
             Spacer()
             
-            ZStack {
-                Rectangle()
-                    .cornerRadius(20)
-                    .frame(height: 50)
-                    .foregroundColor(.blue)
-                Text("Envoyer")
-                    .font(.headline)
-                    .foregroundColor(.white)
-            }.onTapGesture {
-                print("🧙‍♀️")
-                bigModel.makePayment(amount: 40, accountID: bigModel.currentUser?.accountId ?? "nil", currency: "EUR")
+            HStack {
+                Spacer()
+                    Text("Envoyer de l'argent")
+                        .foregroundColor(Color.white)
+                        .fontWeight(.semibold)
+                        .padding(10)
+                Spacer()
+            }.background(Color.blue)
+            .cornerRadius(15)
+            .onTapGesture {
+                Task {
+                    print("🧙‍♀️")
+                    await bigModel.makePayment(amount: Float64(moneyAmount) ?? 0, accountID: bigModel.currentUser?.accountId ?? "nil", currency: "EUR")
+                }
             }
             
         }.padding(20)

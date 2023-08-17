@@ -91,8 +91,7 @@ struct HomePiggyScreen: View {
                 }.background(Color.gray)
                 .cornerRadius(15)
                 .onTapGesture {
-                    print("🧙‍♀️")
-                    bigModel.makePayment(amount: 40, accountID: bigModel.currentUser?.accountId ?? "nil", currency: "EUR")
+                    bigModel.currentView = .SendMoneyScreen
                 }
                 
             }
@@ -104,6 +103,6 @@ struct HomePiggyScreen: View {
 struct HomePiggyScreen_Previews: PreviewProvider {
     static var previews: some View {
         HomePiggyScreen()
-            .environmentObject(BigModel())
+            .environmentObject(BigModel(shouldInjectMockedData: true))
     }
 }

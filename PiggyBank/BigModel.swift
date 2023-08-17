@@ -30,7 +30,7 @@ class BigModel: ObservableObject {
         print("a")
     }
     
-    func makePayment(amount: Float64, accountID: String, currency: String) {
+    func makePayment(amount: Float64, accountID: String, currency: String) async {
         
         do {
             // L'URL de la requête
@@ -83,6 +83,8 @@ class BigModel: ObservableObject {
             }
             
             task.resume()
+            await self.getBankAccountDTO(accountId: accountID)
+            self.currentView = .HomePiggyScreen
             
         }
 
@@ -141,7 +143,6 @@ class BigModel: ObservableObject {
                     DispatchQueue.main.async {
                         self.currentUser = bankAccountDTO
                         print("firstName = \(String(describing: self.currentUser?.firstName))")
-                        self.currentView = .HomePiggyScreen
                         
                         if self.currentUser?.currency ?? "nil" == "EUR" {
                             self.currencySymbol = "€"
@@ -168,6 +169,11 @@ class BigModel: ObservableObject {
 
         // Démarrer la tâche
         
+    }
+    
+    func signIn(accountId: String) async {
+        await getBankAccountDTO(accountId: accountId)
+        self.currentView = .HomePiggyScreen
     }
     
     func signOut() {

@@ -79,7 +79,7 @@ struct ContentView: View {
                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                 .onTapGesture {
                     Task {
-                        await bigModel.getBankAccountDTO(accountId: userName)
+                        await bigModel.signIn(accountId: userName)
                     }
                 }
                 
