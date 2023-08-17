@@ -19,6 +19,7 @@
 		70964CAC2A687C5F00C2F2DF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 70964CAB2A687C5F00C2F2DF /* FirebaseAuth */; };
 		70964CAE2A69A6E500C2F2DF /* ViewEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70964CAD2A69A6E500C2F2DF /* ViewEnum.swift */; };
 		70964CB22A69AAED00C2F2DF /* HomePiggyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70964CB12A69AAED00C2F2DF /* HomePiggyScreen.swift */; };
+		70E18D732A8E72F90039484E /* SendMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E18D722A8E72F90039484E /* SendMoneyView.swift */; };
 		70E39C452A69D36900506F02 /* AddMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E39C442A69D36900506F02 /* AddMoneyView.swift */; };
 		70E39C472A69DBFA00506F02 /* BigRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E39C462A69DBFA00506F02 /* BigRootView.swift */; };
 		70E39C492A69DC0C00506F02 /* BigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E39C482A69DC0C00506F02 /* BigModel.swift */; };
@@ -58,6 +59,7 @@
 		70964C9D2A686D4C00C2F2DF /* PiggyBankUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiggyBankUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		70964CAD2A69A6E500C2F2DF /* ViewEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEnum.swift; sourceTree = "<group>"; };
 		70964CB12A69AAED00C2F2DF /* HomePiggyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePiggyScreen.swift; sourceTree = "<group>"; };
+		70E18D722A8E72F90039484E /* SendMoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyView.swift; sourceTree = "<group>"; };
 		70E39C442A69D36900506F02 /* AddMoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoneyView.swift; sourceTree = "<group>"; };
 		70E39C462A69DBFA00506F02 /* BigRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigRootView.swift; sourceTree = "<group>"; };
 		70E39C482A69DC0C00506F02 /* BigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigModel.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				70964C802A686D4B00C2F2DF /* PiggyBankApp.swift */,
 				70964C822A686D4B00C2F2DF /* ContentView.swift */,
 				70E39C442A69D36900506F02 /* AddMoneyView.swift */,
+				70E18D722A8E72F90039484E /* SendMoneyView.swift */,
 				70964CAD2A69A6E500C2F2DF /* ViewEnum.swift */,
 				70E39C462A69DBFA00506F02 /* BigRootView.swift */,
 				70F27F402A818C720034FF05 /* BankAccountDTOModel.swift */,
@@ -297,6 +300,7 @@
 				70E39C492A69DC0C00506F02 /* BigModel.swift in Sources */,
 				70E39C452A69D36900506F02 /* AddMoneyView.swift in Sources */,
 				70E39C472A69DBFA00506F02 /* BigRootView.swift in Sources */,
+				70E18D732A8E72F90039484E /* SendMoneyView.swift in Sources */,
 				70964C832A686D4B00C2F2DF /* ContentView.swift in Sources */,
 				708D8A8E2A8CB6DC000F1C0F /* PiggyAccountView.swift in Sources */,
 				70964CB22A69AAED00C2F2DF /* HomePiggyScreen.swift in Sources */,

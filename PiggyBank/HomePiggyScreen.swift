@@ -33,10 +33,11 @@ struct HomePiggyScreen: View {
             VStack(spacing: 15) {
                 VStack {
                     HStack {
-                        Text("XXX,XX")
+                        
+                        Text(String(format: "%.1f", bigModel.currentUser?.accountBalance ?? 0))
                             .font(.system(size: 56))
                             .bold()
-                        Text("$")
+                        Text(bigModel.currencySymbol)
                             .font(.system(size: 36))
                             .bold()
                         Spacer()
@@ -89,6 +90,10 @@ struct HomePiggyScreen: View {
                     Spacer()
                 }.background(Color.gray)
                 .cornerRadius(15)
+                .onTapGesture {
+                    print("🧙‍♀️")
+                    bigModel.makePayment(amount: 40, accountID: bigModel.currentUser?.accountId ?? "nil", currency: "EUR")
+                }
                 
             }
             

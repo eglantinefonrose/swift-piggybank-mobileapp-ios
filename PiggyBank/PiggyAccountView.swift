@@ -42,16 +42,18 @@ struct PiggyAccountView: View {
                     .font(.title)
                 
                 Text("ID: \(bigModel.currentUser?.accountId ?? "")")
+                
+                Text("Currency : \(bigModel.currentUser?.currency ?? "nil")")
                       
                 Spacer()
                 
-                HStack {
+                /*HStack {
                     Image(systemName: "pencil.circle")
                         .foregroundColor(.blue)
                     Text("Modifier le profil")
                         .foregroundColor(.blue)
                         .underline()
-                }
+                }*/
                 
                 ZStack {
                     Rectangle()
@@ -62,6 +64,9 @@ struct PiggyAccountView: View {
                     Text("Sign out")
                         .bold()
                         .foregroundColor(.white)
+                        .onTapGesture {
+                            bigModel.signOut()
+                        }
                 }
                 
             }

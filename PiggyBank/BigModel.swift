@@ -11,6 +11,7 @@ class BigModel: ObservableObject {
     
     @Published var currentView: ViewEnum = .SignInView
     @Published var currentUser: BankAccountDTOModel? = nil
+    var currencySymbol: String = ""
     
     public static var shared = BigModel()
     
@@ -29,11 +30,11 @@ class BigModel: ObservableObject {
         print("a")
     }
     
-    func makePayment() {
+    func makePayment(amount: Float64, accountID: String, currency: String) {
         
         do {
             // L'URL de la requête
-            let urlString = "http://127.0.0.1:8080/makePayment/toAccount/45678/withAmount/234/EUR"
+            let urlString = "http://127.0.0.1:8080/makePayment/toAccount/\(accountID)/withAmount/\(amount)/\(currency)"
 
             // Convertir l'URL en objet URL
             guard let url = URL(string: urlString) else {
@@ -141,6 +142,17 @@ class BigModel: ObservableObject {
                         self.currentUser = bankAccountDTO
                         print("firstName = \(String(describing: self.currentUser?.firstName))")
                         self.currentView = .HomePiggyScreen
+                        
+                        if self.currentUser?.currency ?? "nil" == "EUR" {
+                            self.currencySymbol = "€"
+                        }
+                        if self.currentUser?.currency ?? "nil" == "DOLLARD" {
+                            self.currencySymbol = "$"
+                        }
+                        if self.currentUser?.currency ?? "nil" == "POUNDS" {
+                            self.currencySymbol = "£"
+                        }
+                        
                     }
                     
                     
@@ -158,7 +170,7 @@ class BigModel: ObservableObject {
         
     }
     
-    func signOut(accoundId: String) async {
+    func signOut() {
         
         DispatchQueue.main.async {
             self.currentUser = nil
