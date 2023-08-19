@@ -83,9 +83,80 @@ class BigModel: ObservableObject {
             }
             
             task.resume()
-            await self.getBankAccountDTO(accountId: accountID)
+            await self.updateUserBankAccountDTO(accountId: accountID)
             self.currentView = .HomePiggyScreen
             
+        }
+        catch {
+            print(error.localizedDescription)
+        }
+        // Démarrer la tâche
+        
+        
+    }
+    
+    
+    func addMoney(amount: Float64, accountID: String, currency: String) async {
+        
+        do {
+            // L'URL de la requête
+            let urlString = "http://127.0.0.1:8080/addMoney/toAccount/\(accountID)/withAmount/\(amount)/\(currency)"
+
+            // Convertir l'URL en objet URL
+            guard let url = URL(string: urlString) else {
+                print("URL invalide")
+                return
+            }
+
+            // Créer une session URLSession
+            let session = URLSession.shared
+            
+            // Créer une tâche de requête
+            let task = session.dataTask(with: url) { data, response, error in
+                // Vérifier s'il y a des erreurs
+                if let error = error {
+                    print("Erreur : \(error)")
+                    return
+                }
+
+                // Vérifier la réponse HTTP
+                if let httpResponse = response as? HTTPURLResponse {
+                    if !(200...299).contains(httpResponse.statusCode) {
+                        print("La requête a échoué avec le code HTTP \(httpResponse.statusCode)")
+                        return
+                    }
+                }
+
+                // Vérifier s'il y a des données de réponse
+                guard let responseData = data else {
+                    print("Aucune donnée reçue")
+                    return
+                }
+                
+                Task {
+                    let decoder = JSONDecoder()
+                    // Essayer de décoder le JSON en utilisant la structure BankAccountDTO
+                    let bankAccountDTO = try decoder.decode(BankAccountDTOModel.self, from: responseData)
+                   // Accéder aux propriétés de l'objet Swift
+                   print("First Name: \(bankAccountDTO.firstName)")
+                   print("Account ID: \(bankAccountDTO.accountId)")
+                   print("Last Name: \(bankAccountDTO.lastName)")
+                   print("Account Balance: \(bankAccountDTO.accountBalance)")
+                   print("Currency: \(bankAccountDTO.currency)")
+                   print("Is Overdraft Allowed: \(bankAccountDTO.isOverdraftAllowed)")
+                }
+                
+            }
+            
+            task.resume()
+            await self.updateUserBankAccountDTO(accountId: accountID)
+            if currentUser != nil {
+                self.currentView = .HomePiggyScreen
+            }
+            
+        }
+        catch {
+            print(error.localizedDescription)
         }
 
         // Démarrer la tâche
@@ -93,7 +164,10 @@ class BigModel: ObservableObject {
         
     }
     
-    func getBankAccountDTO(accountId: String) async {
+    
+    
+    
+    func updateUserBankAccountDTO(accountId: String) async {
         
         do {
             // L'URL de la requête
@@ -141,7 +215,10 @@ class BigModel: ObservableObject {
                     let bankAccountDTO = try decoder.decode(BankAccountDTOModel.self, from: responseData)
                     
                     DispatchQueue.main.async {
+                        
                         self.currentUser = bankAccountDTO
+                        self.currentView = .HomePiggyScreen
+                        
                         print("firstName = \(String(describing: self.currentUser?.firstName))")
                         
                         if self.currentUser?.currency ?? "nil" == "EUR" {
@@ -155,7 +232,7 @@ class BigModel: ObservableObject {
                         }
                         
                     }
-                    
+
                     
                    // Accéder aux propriétés de l'objet Swift
                     
@@ -172,8 +249,12 @@ class BigModel: ObservableObject {
     }
     
     func signIn(accountId: String) async {
-        await getBankAccountDTO(accountId: accountId)
-        self.currentView = .HomePiggyScreen
+        do {
+            await updateUserBankAccountDTO(accountId: accountId)
+        }
+        catch {
+            print(error.localizedDescription)
+        }
     }
     
     func signOut() {
@@ -183,6 +264,19 @@ class BigModel: ObservableObject {
             self.currentView = .SignInView
         }
         
+    }
+    
+    enum PiggyBankError: Error {
+        case accountAlreadyExists
+        case unknownAccount
+        case inconsistentCurrency
+        case insufficientAccountBalance(message: String)
+        case insufficientOverdraftLimitExceeded
+        case overDraftLimitUndefined
+        case overDraftMustBeNegative
+        case abnormallyHighSum
+        
+        case technicalError
     }
     
 

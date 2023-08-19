@@ -52,7 +52,8 @@ struct AddMoneyView: View {
                             .font(.title)
                     }
                     HStack {
-                        Text("Solde : XXX,XX")
+                        Text("Solde : \(String(format: "%.1f", bigModel.currentUser?.accountBalance ?? 0))")
+                        
                         Spacer()
                         Text("aucun frais")
                     }
@@ -62,6 +63,22 @@ struct AddMoneyView: View {
             
             Spacer()
             
+            HStack {
+                Spacer()
+                Text("Ajouter de l'argent")
+                    .foregroundColor(Color.white)
+                    .fontWeight(.semibold)
+                    .padding(10)
+                Spacer()
+            }.background(Color.blue)
+            .cornerRadius(15)
+            .onTapGesture {
+                Task {
+                    print("🧙‍♀️")
+                    await bigModel.addMoney(amount: Float64(moneyAmount) ?? 0, accountID: bigModel.currentUser?.accountId ?? "nil", currency: "EUR")
+                }
+            }
+            
         }.padding(20)
     }
 }
@@ -69,5 +86,6 @@ struct AddMoneyView: View {
 struct AddMoneyView_Previews: PreviewProvider {
     static var previews: some View {
         AddMoneyView()
+            .environmentObject(BigModel(shouldInjectMockedData: true))
     }
 }

@@ -65,7 +65,7 @@ struct SendMoneyView: View {
                         
                     }
                     HStack {
-                        Text("Solde : \(bigModel.currentUser?.accountBalance ?? 0)")
+                        Text("Solde : \(String(format: "%.1f", bigModel.currentUser?.accountBalance ?? 0))")
                         Spacer()
                         Text("aucun frais")
                     }

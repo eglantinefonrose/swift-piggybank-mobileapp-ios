@@ -32,9 +32,6 @@ struct ContentView: View {
                 Text("Sign in")
                     .font(.largeTitle)
                     .bold()
-                    .onTapGesture {
-                        
-                    }
                 
                 Spacer()
                 
