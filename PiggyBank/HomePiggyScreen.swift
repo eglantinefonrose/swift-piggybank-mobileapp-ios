@@ -18,7 +18,7 @@ struct HomePiggyScreen: View {
                     Circle()
                         .frame(width: 30, height: 30)
                         .foregroundColor(.blue)
-                    Text("\(String(bigModel.currentUser?.firstName.prefix(1) ?? ""))\(String(bigModel.currentUser?.lastName.prefix(1) ?? ""))")
+                    Text("\(String(bigModel.currentUserBankAccount?.firstName.prefix(1) ?? ""))\(String(bigModel.currentUserBankAccount?.lastName.prefix(1) ?? ""))")
                         .font(.caption)
                         .bold()
                         .foregroundColor(.white)
@@ -34,7 +34,7 @@ struct HomePiggyScreen: View {
                 VStack {
                     HStack {
                         
-                        Text(String(format: "%.1f", bigModel.currentUser?.accountBalance ?? 0))
+                        Text(String(format: "%.1f", bigModel.currentUserBankAccount?.accountBalance ?? 0))
                             .font(.system(size: 56))
                             .bold()
                         Text(bigModel.currencySymbol)

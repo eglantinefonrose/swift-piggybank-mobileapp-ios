@@ -52,7 +52,7 @@ struct AddMoneyView: View {
                             .font(.title)
                     }
                     HStack {
-                        Text("Solde : \(String(format: "%.1f", bigModel.currentUser?.accountBalance ?? 0))")
+                        Text("Solde : \(String(format: "%.1f", bigModel.currentUserBankAccount?.accountBalance ?? 0))")
                         
                         Spacer()
                         Text("aucun frais")
@@ -75,7 +75,7 @@ struct AddMoneyView: View {
             .onTapGesture {
                 Task {
                     print("🧙‍♀️")
-                    await bigModel.addMoney(amount: Float64(moneyAmount) ?? 0, accountID: bigModel.currentUser?.accountId ?? "nil", currency: "EUR")
+                    await bigModel.addMoney(amount: Float64(moneyAmount) ?? 0, accountID: bigModel.currentUserBankAccount?.accountId ?? "nil", currency: "EUR")
                 }
             }
             

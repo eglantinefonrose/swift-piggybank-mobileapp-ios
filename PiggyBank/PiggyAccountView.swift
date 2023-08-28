@@ -33,17 +33,17 @@ struct PiggyAccountView: View {
                     Circle()
                         .frame(width: 120, height: 120)
                         .foregroundColor(.blue)
-                    Text("\(String(bigModel.currentUser?.firstName.prefix(1) ?? ""))\(String(bigModel.currentUser?.lastName.prefix(1) ?? ""))")
+                    Text("\(String(bigModel.currentUserBankAccount?.firstName.prefix(1) ?? ""))\(String(bigModel.currentUserBankAccount?.lastName.prefix(1) ?? ""))")
                         .font(.largeTitle)
                         .bold()
                         .foregroundColor(.white)
                 }
-                Text("\(String(bigModel.currentUser?.firstName ?? "")) \(String(bigModel.currentUser?.lastName ?? ""))")
+                Text("\(String(bigModel.currentUserBankAccount?.firstName ?? "")) \(String(bigModel.currentUserBankAccount?.lastName ?? ""))")
                     .font(.title)
                 
-                Text("ID: \(bigModel.currentUser?.accountId ?? "")")
+                Text("ID: \(bigModel.currentUserBankAccount?.accountId ?? "")")
                 
-                Text("Currency : \(bigModel.currentUser?.currency ?? "nil")")
+                Text("Currency : \(bigModel.currentUserBankAccount?.currency ?? "nil")")
                       
                 Spacer()
                 

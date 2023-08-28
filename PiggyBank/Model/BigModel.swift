@@ -10,7 +10,7 @@ import Foundation
 class BigModel: ObservableObject {
     
     @Published var currentView: ViewEnum = .SignInView
-    @Published var currentUser: BankAccountDTOModel? = nil
+    @Published var currentUserBankAccount: BankAccountDTOModel? = nil
     var currencySymbol: String = ""
     
     public static var shared = BigModel()
@@ -21,7 +21,7 @@ class BigModel: ObservableObject {
     
     init(shouldInjectMockedData: Bool) {
         print("Constructor BigModel - default")
-        self.currentUser = BankAccountDTOModel(accountId: "38469403805", accountBalance: 300, currency: "EUR", firstName: "Malo", lastName: "Fonrose", isOverdraftAllowed: 0)
+        self.currentUserBankAccount = BankAccountDTOModel(accountId: "38469403805", accountBalance: 300, currency: "EUR", firstName: "Malo", lastName: "Fonrose", isOverdraftAllowed: 0)
     }
     
     //makePayment
@@ -30,10 +30,23 @@ class BigModel: ObservableObject {
         print("a")
     }
     
+    
+    ///
+    /// COMMENT ECRIRE UN TEST UNITAIRE AVEC SWIFT
+    ///
+    /// DESIGN ADAPTÉ A UN CLI (car bloquant) : Exemple de code Swift avec un test unitaire qui fait un appel HTTP bloquant (avec URLSession.shared.data au lieu de URLSession.shared.datatask) :
+    /// Cf : https://www.avanderlee.com/concurrency/unit-testing-async-await/
+    ///
+    /// DESIGN ADAPTÉ A UNE APP MOBILE (car non bloquant) : La logique non bloquante est plus adaptée au code des UIs car elle ne bloque pas le thread principal.
+    /// Mais, dans un test unitaire, quand on ne fait pas d'appel bloquant, on tombe sur le problème de la function de test qui fini avant la fin de l'exécution
+    /// du callback (problème qu'on peut résoudre avec `waitForExpectations` and `expectation.fulfill()`).
+    /// Cf : https://www.swiftbysundell.com/articles/unit-testing-asynchronous-swift-code/
+    ///
     func makePayment(amount: Float64, accountID: String, currency: String) async {
         
         do {
             // L'URL de la requête
+            print("Appel API")
             let urlString = "http://127.0.0.1:8080/makePayment/toAccount/\(accountID)/withAmount/\(amount)/\(currency)"
 
             // Convertir l'URL en objet URL
@@ -47,6 +60,7 @@ class BigModel: ObservableObject {
             
             // Créer une tâche de requête
             let task = session.dataTask(with: url) { data, response, error in
+                print("Récupération résultat")
                 // Vérifier s'il y a des erreurs
                 if let error = error {
                     print("Erreur : \(error)")
@@ -71,13 +85,13 @@ class BigModel: ObservableObject {
                     let decoder = JSONDecoder()
                     // Essayer de décoder le JSON en utilisant la structure BankAccountDTO
                     let bankAccountDTO = try decoder.decode(BankAccountDTOModel.self, from: responseData)
-                   // Accéder aux propriétés de l'objet Swift
-                   print("First Name: \(bankAccountDTO.firstName)")
-                   print("Account ID: \(bankAccountDTO.accountId)")
-                   print("Last Name: \(bankAccountDTO.lastName)")
-                   print("Account Balance: \(bankAccountDTO.accountBalance)")
-                   print("Currency: \(bankAccountDTO.currency)")
-                   print("Is Overdraft Allowed: \(bankAccountDTO.isOverdraftAllowed)")
+                    // Accéder aux propriétés de l'objet Swift
+                    print("First Name: \(bankAccountDTO.firstName)")
+                    print("Account ID: \(bankAccountDTO.accountId)")
+                    print("Last Name: \(bankAccountDTO.lastName)")
+                    print("Account Balance: \(bankAccountDTO.accountBalance)")
+                    print("Currency: \(bankAccountDTO.currency)")
+                    print("Is Overdraft Allowed: \(bankAccountDTO.isOverdraftAllowed)")
                 }
                 
             }
@@ -94,6 +108,23 @@ class BigModel: ObservableObject {
         
         
     }
+    
+    /// Exemple de code Swift avec un test unitaire qui fait un appel HTTP bloquant (avec URLSession.shared.data au lieu de URLSession.shared.datatask)
+    /*
+     struct ImageFetcher {
+         enum Error: Swift.Error {
+             case imageCastingFailed
+         }
+
+         func fetchImage(for url: URL) async throws -> UIImage {
+             let (data, _) = try await URLSession.shared.data(from: url)
+             guard let image = UIImage(data: data) else {
+                 throw Error.imageCastingFailed
+             }
+             return image
+         }
+     }
+     */
     
     
     func addMoney(amount: Float64, accountID: String, currency: String) async {
@@ -133,7 +164,7 @@ class BigModel: ObservableObject {
                     return
                 }
                 
-                Task {
+                /*Task {
                     let decoder = JSONDecoder()
                     // Essayer de décoder le JSON en utilisant la structure BankAccountDTO
                     let bankAccountDTO = try decoder.decode(BankAccountDTOModel.self, from: responseData)
@@ -144,13 +175,13 @@ class BigModel: ObservableObject {
                    print("Account Balance: \(bankAccountDTO.accountBalance)")
                    print("Currency: \(bankAccountDTO.currency)")
                    print("Is Overdraft Allowed: \(bankAccountDTO.isOverdraftAllowed)")
-                }
+                }*/
                 
             }
             
             task.resume()
             await self.updateUserBankAccountDTO(accountId: accountID)
-            if currentUser != nil {
+            if currentUserBankAccount != nil {
                 self.currentView = .HomePiggyScreen
             }
             
@@ -165,6 +196,71 @@ class BigModel: ObservableObject {
     }
     
     
+    /*func initializeANewBankAccount(accountID: String, firstName: String, lastName: String, accountBalance: Int64, currency: String, isOverdraftAllowed: Int64, overdraftLimit: Float64) async throws -> BankAccountDTOModel {
+        
+        var bankAccountDTO = BankAccountDTOModel()
+        
+        do {
+            // L'URL de la requête
+            let urlString = "http://127.0.0.1:8080/initializeAccount/withAccountId/\(accountID)/withFirstName/\(firstName)/withLastName/\(lastName)/withAccountBalance/\(accountBalance)/currency/\(currency)/overdraftAuthorization/\(isOverdraftAllowed)/overdraftLimit/\(overdraftLimit)"
+
+            // Convertir l'URL en objet URL
+            guard let url = URL(string: urlString) else {
+                print("URL invalide")
+                throw PiggyBankError.technicalError
+            }
+
+            // Créer une session URLSession
+            let session = URLSession.shared
+            
+            // Créer une tâche de requête
+            let task = session.dataTask(with: url) { data, response, error in
+                // Vérifier s'il y a des erreurs
+                if let error = error {
+                    print("Erreur : \(error)")
+                    throw PiggyBankError.technicalError
+                }
+
+                // Vérifier la réponse HTTP
+                if let httpResponse = response as? HTTPURLResponse {
+                    if !(200...299).contains(httpResponse.statusCode) {
+                        print("La requête a échoué avec le code HTTP \(httpResponse.statusCode)")
+                        throw PiggyBankError.technicalError
+                    }
+                }
+
+                // Vérifier s'il y a des données de réponse
+                guard let responseData = data else {
+                    print("Aucune donnée reçue")
+                    throw PiggyBankError.technicalError
+                }
+                
+                let decoder = JSONDecoder()
+                // Essayer de décoder le JSON en utilisant la structure BankAccountDTO
+                let bankAccountDTO = try decoder.decode(BankAccountDTOModel.self, from: responseData)
+               // Accéder aux propriétés de l'objet Swift
+               print("First Name: \(bankAccountDTO.firstName)")
+               print("Account ID: \(bankAccountDTO.accountId)")
+               print("Last Name: \(bankAccountDTO.lastName)")
+               print("Account Balance: \(bankAccountDTO.accountBalance)")
+               print("Currency: \(bankAccountDTO.currency)")
+               print("Is Overdraft Allowed: \(bankAccountDTO.isOverdraftAllowed)")
+                
+            }
+            
+            await self.updateUserBankAccountDTO(accountId: accountID)
+            if currentUserBankAccount != nil {
+                self.currentView = .HomePiggyScreen
+            }
+            return bankAccountDTO
+            
+        }
+        catch {
+            print(error.localizedDescription)
+            throw PiggyBankError.technicalError
+        }
+        
+    }*/
     
     
     func updateUserBankAccountDTO(accountId: String) async {
@@ -216,18 +312,18 @@ class BigModel: ObservableObject {
                     
                     DispatchQueue.main.async {
                         
-                        self.currentUser = bankAccountDTO
+                        self.currentUserBankAccount = bankAccountDTO
                         self.currentView = .HomePiggyScreen
                         
-                        print("firstName = \(String(describing: self.currentUser?.firstName))")
+                        print("firstName = \(String(describing: self.currentUserBankAccount?.firstName))")
                         
-                        if self.currentUser?.currency ?? "nil" == "EUR" {
+                        if self.currentUserBankAccount?.currency ?? "nil" == "EUR" {
                             self.currencySymbol = "€"
                         }
-                        if self.currentUser?.currency ?? "nil" == "DOLLARD" {
+                        if self.currentUserBankAccount?.currency ?? "nil" == "DOLLARD" {
                             self.currencySymbol = "$"
                         }
-                        if self.currentUser?.currency ?? "nil" == "POUNDS" {
+                        if self.currentUserBankAccount?.currency ?? "nil" == "POUNDS" {
                             self.currencySymbol = "£"
                         }
                         
@@ -260,7 +356,7 @@ class BigModel: ObservableObject {
     func signOut() {
         
         DispatchQueue.main.async {
-            self.currentUser = nil
+            self.currentUserBankAccount = nil
             self.currentView = .SignInView
         }
         
