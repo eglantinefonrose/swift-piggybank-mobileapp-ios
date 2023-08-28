@@ -17,6 +17,9 @@ struct PiggyAccountView: View {
             
             HStack {
                 Image(systemName: "house")
+                    .onTapGesture {
+                        bigModel.currentView = .HomePiggyScreen
+                    }
                 Spacer()
                 Text("Account Details")
                     .bold()

@@ -22,7 +22,10 @@ struct HomePiggyScreen: View {
                         .font(.caption)
                         .bold()
                         .foregroundColor(.white)
+                }.onTapGesture {
+                   bigModel.currentView = .PiggyAccountScreen
                 }
+                
                 Spacer()
                 Text("Acceuil")
                     .font(.title3)
