@@ -97,6 +97,19 @@ struct HomePiggyScreen: View {
                     bigModel.currentView = .SendMoneyScreen
                 }
                 
+                HStack {
+                    Spacer()
+                        Text("Transférer de l'argent")
+                            .foregroundColor(Color.black)
+                            .fontWeight(.semibold)
+                            .padding(10)
+                    Spacer()
+                }.background(Color.gray)
+                .cornerRadius(15)
+                .onTapGesture {
+                    bigModel.currentView = .PiggyTranscationScreen
+                }
+                
             }
             
         }.padding(20)

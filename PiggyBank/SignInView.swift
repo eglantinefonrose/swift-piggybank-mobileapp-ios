@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct SignInView: View {
     
     @EnvironmentObject var bigModel: BigModel
     @Environment(\.colorScheme) var theColorScheme
@@ -88,9 +88,9 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SignInView()
             .environmentObject(BigModel())
     }
 }

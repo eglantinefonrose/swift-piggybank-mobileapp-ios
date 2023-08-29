@@ -16,7 +16,7 @@ struct BigRootView: View {
         VStack {
             
             if (bigModel.currentView == .SignInView) {
-                ContentView()
+                SignInView()
             }
             if (bigModel.currentView == .HomePiggyScreen) {
                 HomePiggyScreen()
@@ -29,6 +29,9 @@ struct BigRootView: View {
             }
             if (bigModel.currentView == .PiggyAccountScreen) {
                 PiggyAccountView()
+            }
+            if (bigModel.currentView == .PiggyTranscationScreen) {
+                TransactionView()
             }
             
         }

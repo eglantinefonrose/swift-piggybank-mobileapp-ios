@@ -14,5 +14,6 @@ enum ViewEnum: String {
     case AddMoneyScreen
     case SendMoneyScreen
     case PiggyAccountScreen
+    case PiggyTranscationScreen
     
 }

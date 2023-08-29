@@ -16,13 +16,5 @@ struct BankAccountDTOModel: Codable {
     var lastName: String = ""
     var isOverdraftAllowed: Int = 0
     var overDraftLimit: Float?
-}
-
-struct TransactionDTOModel: Codable {
-    
-    var senderAccountDTO: BankAccountDTOModel
-    var recipientAccountDTO: BankAccountDTOModel
-    var amount: Float64
-    var currency: String
     
 }
