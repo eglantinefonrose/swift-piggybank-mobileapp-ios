@@ -77,6 +77,8 @@ struct SignInView: View {
                 .onTapGesture {
                     Task {
                         await bigModel.signIn(accountId: userName)
+                        //bigModel.updateUserSenderTransactionsList(accountId: userName)
+                        //bigModel.updateUserRecipientTransactionsList(accountId: userName)
                     }
                 }
                 

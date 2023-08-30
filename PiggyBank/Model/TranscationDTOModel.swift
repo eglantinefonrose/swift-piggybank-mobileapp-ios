@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-struct TransactionDTOModel: Codable {
+struct TransactionDTOModel: Codable, Identifiable {
     
-    var senderAccountDTOID: String
-    var recipientAccountDTOID: String
+    var id: String
+    var senderAccountID: String
+    var recipientAccountID: String
     var amount: Float64
     var currency: String
     

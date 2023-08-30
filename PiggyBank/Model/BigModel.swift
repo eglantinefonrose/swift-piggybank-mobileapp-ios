@@ -11,6 +11,8 @@ class BigModel: ObservableObject {
     
     @Published var currentView: ViewEnum = .SignInView
     @Published var currentUserBankAccount: BankAccountDTOModel? = nil
+    @Published var allSenderTransactions: [TransactionDTOModel] = []
+    @Published var allRecipientTransactions: [TransactionDTOModel] = []
     var currencySymbol: String = ""
     
     public static var shared = BigModel()
@@ -370,6 +372,145 @@ class BigModel: ObservableObject {
         // Démarrer la tâche
         
     }
+    
+    
+    func updateUserSenderTransactionsList(accountId: String) {
+        
+        do {
+            // L'URL de la requête
+            
+            //58540395859
+            
+            let urlString = "http://127.0.0.1:8080/getSenderTransactions/\(accountId)"
+
+            // Convertir l'URL en objet URL
+            guard let url = URL(string: urlString) else {
+                print("URL invalide")
+                return
+            }
+
+            // Créer une session URLSession
+            let session = URLSession.shared
+            
+            // Créer une tâche de requête
+            let task = session.dataTask(with: url) { data, response, error in
+                // Vérifier s'il y a des erreurs
+                if let error = error {
+                    print("Erreur : \(error)")
+                    return
+                }
+
+                // Vérifier la réponse HTTP
+                if let httpResponse = response as? HTTPURLResponse {
+                    if !(200...299).contains(httpResponse.statusCode) {
+                        print("La requête a échoué avec le code HTTP \(httpResponse.statusCode)")
+                        return
+                    }
+                }
+
+                // Vérifier s'il y a des données de réponse
+                guard let responseData = data else {
+                    print("Aucune donnée reçue")
+                    return
+                }
+                
+                Task {
+                   
+                    let decoder = JSONDecoder()
+                    // Essayer de décoder le JSON en utilisant la structure BankAccountDTO
+                    
+                    let bankAccountDTO = try decoder.decode([TransactionDTOModel].self, from: responseData)
+                    
+                    DispatchQueue.main.async {
+                        
+                        self.allSenderTransactions = bankAccountDTO
+                        
+                    }
+
+                    
+                   // Accéder aux propriétés de l'objet Swift
+                    
+                }
+                
+            }
+            
+            task.resume()
+            
+        }
+
+        // Démarrer la tâche
+        
+    }
+    
+    
+    func updateUserRecipientTransactionsList(accountId: String) {
+        
+        do {
+            // L'URL de la requête
+            
+            //58540395859
+            
+            let urlString = "http://127.0.0.1:8080/getRecipientTransactions/\(accountId)"
+
+            // Convertir l'URL en objet URL
+            guard let url = URL(string: urlString) else {
+                print("URL invalide")
+                return
+            }
+
+            // Créer une session URLSession
+            let session = URLSession.shared
+            
+            // Créer une tâche de requête
+            let task = session.dataTask(with: url) { data, response, error in
+                // Vérifier s'il y a des erreurs
+                if let error = error {
+                    print("Erreur : \(error)")
+                    return
+                }
+
+                // Vérifier la réponse HTTP
+                if let httpResponse = response as? HTTPURLResponse {
+                    if !(200...299).contains(httpResponse.statusCode) {
+                        print("La requête a échoué avec le code HTTP \(httpResponse.statusCode)")
+                        return
+                    }
+                }
+
+                // Vérifier s'il y a des données de réponse
+                guard let responseData = data else {
+                    print("Aucune donnée reçue")
+                    return
+                }
+                
+                Task {
+                   
+                    let decoder = JSONDecoder()
+                    // Essayer de décoder le JSON en utilisant la structure BankAccountDTO
+                    
+                    let recipientTransactions = try decoder.decode([TransactionDTOModel].self, from: responseData)
+                    
+                    DispatchQueue.main.async {
+                        
+                        self.allRecipientTransactions = recipientTransactions
+                        
+                    }
+
+                    
+                   // Accéder aux propriétés de l'objet Swift
+                    
+                }
+                
+            }
+            
+            task.resume()
+            
+        }
+
+        // Démarrer la tâche
+        
+    }
+    
     
     func signIn(accountId: String) async {
         do {

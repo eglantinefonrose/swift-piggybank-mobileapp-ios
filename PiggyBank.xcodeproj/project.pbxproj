@@ -97,9 +97,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70243F4B2A9F909F00ED98C1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				70964CB12A69AAED00C2F2DF /* HomePiggyScreen.swift */,
+				708D8A8D2A8CB6DC000F1C0F /* PiggyAccountView.swift */,
+				70964C822A686D4B00C2F2DF /* SignInView.swift */,
+				70E39C442A69D36900506F02 /* AddMoneyView.swift */,
+				70E18D722A8E72F90039484E /* SendMoneyView.swift */,
+				707210AF2A9E0DFB00E53CC0 /* TransactionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		707210AC2A9BE31900E53CC0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				707210AD2A9D0EFE00E53CC0 /* TranscationDTOModel.swift */,
+				70F27F402A818C720034FF05 /* BankAccountDTOModel.swift */,
 				70E39C482A69DC0C00506F02 /* BigModel.swift */,
 			);
 			path = Model;
@@ -130,16 +145,9 @@
 			isa = PBXGroup;
 			children = (
 				70964C802A686D4B00C2F2DF /* PiggyBankApp.swift */,
-				707210AF2A9E0DFB00E53CC0 /* TransactionView.swift */,
-				70E39C442A69D36900506F02 /* AddMoneyView.swift */,
-				70964C822A686D4B00C2F2DF /* SignInView.swift */,
-				70E18D722A8E72F90039484E /* SendMoneyView.swift */,
-				70964CAD2A69A6E500C2F2DF /* ViewEnum.swift */,
 				70E39C462A69DBFA00506F02 /* BigRootView.swift */,
-				70F27F402A818C720034FF05 /* BankAccountDTOModel.swift */,
-				707210AD2A9D0EFE00E53CC0 /* TranscationDTOModel.swift */,
-				708D8A8D2A8CB6DC000F1C0F /* PiggyAccountView.swift */,
-				70964CB12A69AAED00C2F2DF /* HomePiggyScreen.swift */,
+				70964CAD2A69A6E500C2F2DF /* ViewEnum.swift */,
+				70243F4B2A9F909F00ED98C1 /* Views */,
 				707210AC2A9BE31900E53CC0 /* Model */,
 				70964C842A686D4B00C2F2DF /* Assets.xcassets */,
 				70964C862A686D4B00C2F2DF /* Preview Content */,

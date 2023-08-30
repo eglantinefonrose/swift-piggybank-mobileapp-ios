@@ -63,6 +63,7 @@ struct HomePiggyScreen: View {
                         Text("Tout voir")
                             .foregroundColor(.blue)
                     }
+                    
                 }
                 
             }
