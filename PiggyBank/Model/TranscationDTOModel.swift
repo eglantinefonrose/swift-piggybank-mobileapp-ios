@@ -14,5 +14,6 @@ struct TransactionDTOModel: Codable, Identifiable {
     var recipientAccountID: String
     var amount: Float64
     var currency: String
+    var date: Int64
     
 }

@@ -55,16 +55,49 @@ struct HomePiggyScreen: View {
                     }
                 }
                 
-                VStack {
+                ZStack {
                     
-                    HStack {
-                        Text("Transactions")
-                        Spacer()
-                        Text("Tout voir")
-                            .foregroundColor(.blue)
-                    }
+                    Rectangle()
+                        .foregroundColor(.gray)
+                        .cornerRadius(20)
+                    
+                    VStack {
+                        
+                        HStack {
+                            Text("Transactions")
+                                .font(.title2)
+                            Spacer()
+                        }
+                        
+                        List(bigModel.allSenderTransactions) { transaction in
+                            
+                             HStack {
+                                 
+                                 VStack {
+                                     Text(transaction.recipientAccountID)
+                                         .font(.title3)
+                                         .bold()
+                                     Text("\(String(Date(timeIntervalSince1970: TimeInterval(transaction.date)).get(.hour))):\(String(Date(timeIntervalSince1970: TimeInterval(transaction.date)).get(.minute))):\(String(Date(timeIntervalSince1970: TimeInterval(transaction.date)).get(.second)))")
+                                     
+                                     //Date(timeIntervalSince1970: TimeInterval(transaction.date)).get(.day)
+                                     
+                                 }
+                                 
+                                 Spacer()
+                                 
+                                 Text("+\(String(format: "%.1f", transaction.amount)) \(transaction.currency)")
+                                     .font(.title3)
+                                 
+                             }.padding(.vertical, 7)
+                            .background(Color.gray)
+                            .listRowBackground(Color.gray)
+                        }.listStyle(PlainListStyle())
+                        
+                    }.padding(20)
                     
                 }
+                
+                Spacer()
                 
             }
             
@@ -115,6 +148,21 @@ struct HomePiggyScreen: View {
             
         }.padding(20)
     }
+}
+
+extension Date {
+    func get(_ components: Calendar.Component..., calendar: Calendar = Calendar.current) -> DateComponents {
+        return calendar.dateComponents(Set(components), from: self)
+    }
+
+    func get(_ component: Calendar.Component, calendar: Calendar = Calendar.current) -> Int {
+        return calendar.component(component, from: self)
+    }
+}
+
+func dateFromJd(jd : Int64) -> Date {
+    let JD_JAN_1_1970_0000GMT = 2440587.5
+    return  Date(timeIntervalSince1970: (Double(jd) - JD_JAN_1_1970_0000GMT) * 86400)
 }
 
 struct HomePiggyScreen_Previews: PreviewProvider {

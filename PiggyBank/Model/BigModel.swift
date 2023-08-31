@@ -24,6 +24,7 @@ class BigModel: ObservableObject {
     init(shouldInjectMockedData: Bool) {
         print("Constructor BigModel - default")
         self.currentUserBankAccount = BankAccountDTOModel(accountId: "38469403805", accountBalance: 300, currency: "EUR", firstName: "Malo", lastName: "Fonrose", isOverdraftAllowed: 0)
+        self.allSenderTransactions = [TransactionDTOModel(id: "584", senderAccountID: "2000", recipientAccountID: "1000", amount: 300, currency: "EUR", date: 14112), TransactionDTOModel(id: "584", senderAccountID: "2000", recipientAccountID: "1000", amount: 100, currency: "DOLLARDS", date: 12122)]
     }
     
     //makePayment
@@ -209,8 +210,9 @@ class BigModel: ObservableObject {
             }
             
             task.resume()
-            await self.updateUserBankAccountDTO(accountId: senderAccountID)
             if currentUserBankAccount != nil {
+                await self.updateUserBankAccountDTO(accountId: senderAccountID)
+                self.updateUserSenderTransactionsList(accountId: senderAccountID)
                 self.currentView = .HomePiggyScreen
             }
             
@@ -422,11 +424,8 @@ class BigModel: ObservableObject {
                     let bankAccountDTO = try decoder.decode([TransactionDTOModel].self, from: responseData)
                     
                     DispatchQueue.main.async {
-                        
                         self.allSenderTransactions = bankAccountDTO
-                        
                     }
-
                     
                    // Accéder aux propriétés de l'objet Swift
                     

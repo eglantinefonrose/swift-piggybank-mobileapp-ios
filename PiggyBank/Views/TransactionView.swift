@@ -106,7 +106,6 @@ struct TransactionView: View {
             .cornerRadius(15)
             .onTapGesture {
                 Task {
-                    print("🧙‍♀️")
                     await bigModel.transferMoney(senderAccountID: bigModel.currentUserBankAccount?.accountId ?? "nil", recipientAccountId: reciepientAccountID, amount: Float64(moneyAmount) ?? 0, currency: "EUR")
                 }
             }
