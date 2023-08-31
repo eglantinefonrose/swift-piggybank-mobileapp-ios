@@ -11,7 +11,7 @@ class BigModel: ObservableObject {
     
     @Published var currentView: ViewEnum = .SignInView
     @Published var currentUserBankAccount: BankAccountDTOModel? = nil
-    @Published var allSenderTransactions: [TransactionDTOModel] = []
+    @Published var allTransactions: [TransactionDTOModel] = []
     @Published var allRecipientTransactions: [TransactionDTOModel] = []
     var currencySymbol: String = ""
     
@@ -24,7 +24,7 @@ class BigModel: ObservableObject {
     init(shouldInjectMockedData: Bool) {
         print("Constructor BigModel - default")
         self.currentUserBankAccount = BankAccountDTOModel(accountId: "38469403805", accountBalance: 300, currency: "EUR", firstName: "Malo", lastName: "Fonrose", isOverdraftAllowed: 0)
-        self.allSenderTransactions = [TransactionDTOModel(id: "584", senderAccountID: "2000", recipientAccountID: "1000", amount: 300, currency: "EUR", date: 14112), TransactionDTOModel(id: "584", senderAccountID: "2000", recipientAccountID: "1000", amount: 100, currency: "DOLLARDS", date: 12122)]
+        self.allTransactions = [TransactionDTOModel(id: "584", senderAccountID: "2000", recipientAccountID: "1000", amount: 300, currency: "EUR", date: 14112), TransactionDTOModel(id: "584", senderAccountID: "2000", recipientAccountID: "1000", amount: 100, currency: "DOLLARDS", date: 12122)]
     }
     
     //makePayment
@@ -383,7 +383,7 @@ class BigModel: ObservableObject {
             
             //58540395859
             
-            let urlString = "http://127.0.0.1:8080/getSenderTransactions/\(accountId)"
+            let urlString = "http://127.0.0.1:8080/getTransactions/\(accountId)"
 
             // Convertir l'URL en objet URL
             guard let url = URL(string: urlString) else {
@@ -424,7 +424,7 @@ class BigModel: ObservableObject {
                     let bankAccountDTO = try decoder.decode([TransactionDTOModel].self, from: responseData)
                     
                     DispatchQueue.main.async {
-                        self.allSenderTransactions = bankAccountDTO
+                        self.allTransactions = bankAccountDTO
                     }
                     
                    // Accéder aux propriétés de l'objet Swift

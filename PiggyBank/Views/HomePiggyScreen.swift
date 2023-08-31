@@ -69,12 +69,12 @@ struct HomePiggyScreen: View {
                             Spacer()
                         }
                         
-                        List(bigModel.allSenderTransactions) { transaction in
+                        List(bigModel.allTransactions) { transaction in
                             
                              HStack {
                                  
                                  VStack {
-                                     Text(transaction.recipientAccountID)
+                                     Text( "\((transaction.senderAccountID != bigModel.currentUserBankAccount?.accountId ?? "nil") ? transaction.senderAccountID : transaction.recipientAccountID)")
                                          .font(.title3)
                                          .bold()
                                      Text("\(String(Date(timeIntervalSince1970: TimeInterval(transaction.date)).get(.hour))):\(String(Date(timeIntervalSince1970: TimeInterval(transaction.date)).get(.minute))):\(String(Date(timeIntervalSince1970: TimeInterval(transaction.date)).get(.second)))")
@@ -85,7 +85,9 @@ struct HomePiggyScreen: View {
                                  
                                  Spacer()
                                  
-                                 Text("+\(String(format: "%.1f", transaction.amount)) \(transaction.currency)")
+                                 
+                                 
+                                 Text("\((transaction.recipientAccountID == bigModel.currentUserBankAccount?.accountId ?? "nil") ? "+" : "-")\(String(format: "%.1f", transaction.amount)) \(transaction.currency)")
                                      .font(.title3)
                                  
                              }.padding(.vertical, 7)
