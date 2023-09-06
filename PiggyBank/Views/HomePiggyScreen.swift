@@ -40,7 +40,10 @@ struct HomePiggyScreen: View {
                         Text(String(format: "%.1f", bigModel.currentUserBankAccount?.accountBalance ?? 0))
                             .font(.system(size: 56))
                             .bold()
-                        Text(bigModel.currencySymbol)
+                        /*Text(bigModel.currencySymbol)
+                            .font(.system(size: 36))
+                            .bold()*/
+                        Text(bigModel.currentUserBankAccount?.currency ?? "nil")
                             .font(.system(size: 36))
                             .bold()
                         Spacer()

@@ -170,11 +170,12 @@ class BigModel: ObservableObject {
         
     }
     
-    func transferMoney(senderAccountID: String, recipientAccountId: String, amount: Float64, currency: String) async {
+    func transferMoney(senderAccountID: String, recipientAccountId: String, amount: Float64) async {
         
         do {
             // L'URL de la requête
-            let urlString = "http://127.0.0.1:8080/transferMoney/fromAccount/\(senderAccountID)/toAccount/\(recipientAccountId)/withAmount/\(amount)/\(currency)"
+            let urlString = "http://127.0.0.1:8080/transferMoney/fromAccount/\(senderAccountID)/toAccount/\(recipientAccountId)/withAmount/\(amount)"
+            //let urlString = "http://127.0.0.1:8080/transferMoney/fromAccount/2000/toAccount/1000/withAmount/10"
 
             // Convertir l'URL en objet URL
             guard let url = URL(string: urlString) else {
