@@ -345,6 +345,9 @@ class BigModel: ObservableObject {
                     DispatchQueue.main.async {
                         
                         self.currentUserBankAccount = bankAccountDTO
+                        
+                        self.updateUserSenderTransactionsList(accountId: accountId)
+                        
                         self.currentView = .HomePiggyScreen
                         
                         print("firstName = \(String(describing: self.currentUserBankAccount?.firstName))")
@@ -384,7 +387,7 @@ class BigModel: ObservableObject {
             
             //58540395859
             
-            let urlString = "http://127.0.0.1:8080/getTransactions/\(accountId)"
+            let urlString = "http://127.0.0.1:8080/getTransactions/\(accountId)/inCurrency/\(self.currentUserBankAccount?.currency ?? "nil")"
 
             // Convertir l'URL en objet URL
             guard let url = URL(string: urlString) else {
