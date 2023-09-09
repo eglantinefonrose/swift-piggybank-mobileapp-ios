@@ -24,7 +24,7 @@ class BigModel: ObservableObject {
     init(shouldInjectMockedData: Bool) {
         print("Constructor BigModel - default")
         self.currentUserBankAccount = BankAccountDTOModel(accountId: "38469403805", accountBalance: 300, currency: "EUR", firstName: "Malo", lastName: "Fonrose", isOverdraftAllowed: 0)
-        self.allTransactions = [TransactionDTOModel(id: "584", senderAccountID: "2000", recipientAccountID: "1000", amount: 300, currency: "EUR", date: 14112), TransactionDTOModel(id: "584", senderAccountID: "2000", recipientAccountID: "1000", amount: 100, currency: "DOLLARDS", date: 12122)]
+        self.allTransactions = [TransactionDTOModel(id: "584", senderAccountID: "2000", recipientAccountID: "1000", amount: 300, currency: "EUR", date: 14112), TransactionDTOModel(id: "584", senderAccountID: "2000", recipientAccountID: "1000", amount: 100, currency: "USD", date: 12122)]
     }
     
     //makePayment

@@ -29,7 +29,7 @@ struct SignInView: View {
                 
                 Spacer()
                 
-                Text("Sign in")
+                Text("sign-in")
                     .font(.largeTitle)
                     .bold()
                 
@@ -45,7 +45,7 @@ struct SignInView: View {
                                                      
                      Spacer()
                      
-                     TextField("Username", text: $userName)
+                     TextField("username", text: $userName)
                          .disableAutocorrection(true)
                          .autocapitalization(.none)
                      
@@ -66,7 +66,7 @@ struct SignInView: View {
                 
                 HStack {
                     Spacer()
-                        Text("Sign in")
+                        Text("sign-in")
                             .foregroundColor(Color.white)
                             .fontWeight(.semibold)
                             .padding(7)

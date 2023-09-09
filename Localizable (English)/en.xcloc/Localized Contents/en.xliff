@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="PiggyBank/en.lproj/Localizable.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.3.1" build-num="14E300c"/>
+    </header>
+    <body>
+      <trans-unit id="%@" xml:space="preserve">
+        <source>%@</source>
+        <target>%@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ %@" xml:space="preserve">
+        <source>%@ %@</source>
+        <target>%@ %@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@%@" xml:space="preserve">
+        <source>%@%@</source>
+        <target>%@%@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@%@ %@" xml:space="preserve">
+        <source>%@%@ %@</source>
+        <target>%@%@ %@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@:%@:%@" xml:space="preserve">
+        <source>%@:%@:%@</source>
+        <target>%@:%@:%@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Acceuil" xml:space="preserve">
+        <source>Acceuil</source>
+        <target>Acceuil</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Account Details" xml:space="preserve">
+        <source>Account Details</source>
+        <target>Account Details</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Ajouter de l'argent" xml:space="preserve">
+        <source>Ajouter de l'argent</source>
+        <target>Ajouter de l'argent</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Currency : %@" xml:space="preserve">
+        <source>Currency : %@</source>
+        <target>Currency : %@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Destinataire" xml:space="preserve">
+        <source>Destinataire</source>
+        <target>Destinataire</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Dismiss Modal" xml:space="preserve">
+        <source>Dismiss Modal</source>
+        <target>Dismiss Modal</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="EUR" xml:space="preserve">
+        <source>EUR</source>
+        <target>EUR</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Envoyer de l'argent" xml:space="preserve">
+        <source>Envoyer de l'argent</source>
+        <target>Envoyer de l'argent</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Euro" xml:space="preserve">
+        <source>Euro</source>
+        <target>Euro</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="ID: %@" xml:space="preserve">
+        <source>ID: %@</source>
+        <target>ID: %@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Password" xml:space="preserve">
+        <source>Password</source>
+        <target>Password</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Sign in" xml:space="preserve">
+        <source>Sign in</source>
+        <target>Sign in</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Sign out" xml:space="preserve">
+        <source>Sign out</source>
+        <target>Sign out</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Solde : %@" xml:space="preserve">
+        <source>Solde : %@</source>
+        <target>Solde : %@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Transactions" xml:space="preserve">
+        <source>Transactions</source>
+        <target>Transactions</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Transférer de l'argent" xml:space="preserve">
+        <source>Transférer de l'argent</source>
+        <target>Transférer de l'argent</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Username" xml:space="preserve">
+        <source>Username</source>
+        <target>Username</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="aucun frais" xml:space="preserve">
+        <source>aucun frais</source>
+        <target>aucun frais</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="PiggyBank/en.lproj/PiggyBank-InfoPlist.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.3.1" build-num="14E300c"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>PiggyBank</source>
+        <target>PiggyBank</target>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

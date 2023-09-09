@@ -26,7 +26,7 @@ struct TransactionView: View {
                     .onTapGesture {
                         bigModel.currentView = .HomePiggyScreen
                     }
-                Text("Transférer de l'argent")
+                Text("transfer-money")
                     .font(.largeTitle)
                     .bold()
             }
@@ -60,9 +60,9 @@ struct TransactionView: View {
                     }
                     
                     HStack {
-                        Text("Solde : \(String(format: "%.1f", bigModel.currentUserBankAccount?.accountBalance ?? 0))")
+                        Text("amount \(String(format: "%.1f", bigModel.currentUserBankAccount?.accountBalance ?? 0))")
                         Spacer()
-                        Text("aucun frais")
+                        Text("no-charges")
                     }
                 }.padding(20)
                 
@@ -78,7 +78,7 @@ struct TransactionView: View {
                                                      
                      Spacer()
                      
-                     TextField("Destinataire", text: $reciepientAccountID)
+                     TextField("recipient", text: $reciepientAccountID)
                          .disableAutocorrection(true)
                          .autocapitalization(.none)
                      
@@ -97,7 +97,7 @@ struct TransactionView: View {
             
             HStack {
                 Spacer()
-                    Text("Transférer de l'argent")
+                    Text("transfer-money")
                         .foregroundColor(Color.white)
                         .fontWeight(.semibold)
                         .padding(10)

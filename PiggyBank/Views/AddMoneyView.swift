@@ -24,7 +24,7 @@ struct AddMoneyView: View {
                     .onTapGesture {
                         bigModel.currentView = .HomePiggyScreen
                     }
-                Text("Ajouter de l'argent")
+                Text("add-money")
                     .font(.largeTitle)
                     .bold()
             }
@@ -52,10 +52,10 @@ struct AddMoneyView: View {
                             .font(.title)
                     }
                     HStack {
-                        Text("Solde : \(String(format: "%.1f", bigModel.currentUserBankAccount?.accountBalance ?? 0))")
+                        Text("amount \(String(format: "%.1f", bigModel.currentUserBankAccount?.accountBalance ?? 0))")
                         
                         Spacer()
-                        Text("aucun frais")
+                        Text("no-charges")
                     }
                 }.padding(20)
                 
@@ -65,7 +65,7 @@ struct AddMoneyView: View {
             
             HStack {
                 Spacer()
-                Text("Ajouter de l'argent")
+                Text("add-money")
                     .foregroundColor(Color.white)
                     .fontWeight(.semibold)
                     .padding(10)

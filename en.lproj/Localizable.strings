@@ -1,0 +1,13 @@
+"username" = "Username";
+"sign-in" = "Sign in";
+"home" = "Home";
+"transactions" = "Transactions";
+"add-money" = "Add money";
+"send-money" = "Send money";
+"transfer-money" = "Transfer money";
+"amount %@" = "Amount : %@";
+"no-charges" = "No charges";
+"recipient" = "Recipient";
+"account-details" = "Account details";
+"currency %@" = "Currency : %@";
+"sign-out" = "Sign out";

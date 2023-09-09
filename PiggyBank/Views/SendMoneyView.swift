@@ -31,7 +31,7 @@ struct SendMoneyView: View {
                     .onTapGesture {
                         bigModel.currentView = .HomePiggyScreen
                     }
-                Text("Envoyer de l'argent")
+                Text("send-money")
                     .font(.largeTitle)
                     .bold()
             }
@@ -65,9 +65,9 @@ struct SendMoneyView: View {
                         
                     }
                     HStack {
-                        Text("Solde : \(String(format: "%.1f", bigModel.currentUserBankAccount?.accountBalance ?? 0))")
+                        Text("amount \(String(format: "%.1f", bigModel.currentUserBankAccount?.accountBalance ?? 0))")
                         Spacer()
-                        Text("aucun frais")
+                        Text("no-charges")
                     }
                 }.padding(20)
                 
@@ -77,7 +77,7 @@ struct SendMoneyView: View {
             
             HStack {
                 Spacer()
-                    Text("Envoyer de l'argent")
+                    Text("send-money")
                         .foregroundColor(Color.white)
                         .fontWeight(.semibold)
                         .padding(10)

@@ -21,7 +21,7 @@ struct PiggyAccountView: View {
                         bigModel.currentView = .HomePiggyScreen
                     }
                 Spacer()
-                Text("Account Details")
+                Text("account-details")
                     .bold()
                 Spacer()
             }
@@ -46,7 +46,7 @@ struct PiggyAccountView: View {
                 
                 Text("ID: \(bigModel.currentUserBankAccount?.accountId ?? "")")
                 
-                Text("Currency : \(bigModel.currentUserBankAccount?.currency ?? "nil")")
+                Text("currency \(bigModel.currentUserBankAccount?.currency ?? "nil")")
                       
                 Spacer()
                 
@@ -64,7 +64,7 @@ struct PiggyAccountView: View {
                         .foregroundColor(.gray)
                         .opacity(0.5)
                     .frame(height: 50)
-                    Text("Sign out")
+                    Text("sign-out")
                         .bold()
                         .foregroundColor(.white)
                         .onTapGesture {

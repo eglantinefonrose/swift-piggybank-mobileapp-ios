@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct HomePiggyScreen: View {
+    
     @Environment(\.colorScheme) var theColorScheme
     @EnvironmentObject var bigModel: BigModel
+    @State private var showCategorySelector = false
+    
     var body: some View {
         VStack {
                         
@@ -27,7 +30,7 @@ struct HomePiggyScreen: View {
                 }
                 
                 Spacer()
-                Text("Acceuil")
+                Text("home")
                     .font(.title3)
                     .bold()
                 Spacer()
@@ -43,7 +46,7 @@ struct HomePiggyScreen: View {
                         /*Text(bigModel.currencySymbol)
                             .font(.system(size: 36))
                             .bold()*/
-                        Text(bigModel.currentUserBankAccount?.currency ?? "nil")
+                        Text(bigModel.currentUserBankAccount?.currency.currencySymbol() ?? "nil")
                             .font(.system(size: 36))
                             .bold()
                         Spacer()
@@ -51,11 +54,11 @@ struct HomePiggyScreen: View {
                             .frame(width: 45, height: 45)
                             .foregroundColor(.blue)
                     }
-                    HStack {
+                    /*HStack {
                         Text("Euro")
                             .font(.title3)
                         Spacer()
-                    }
+                    }*/
                 }
                 
                 ZStack {
@@ -67,9 +70,14 @@ struct HomePiggyScreen: View {
                     VStack {
                         
                         HStack {
-                            Text("Transactions")
+                            Text("transactions")
                                 .font(.title2)
                             Spacer()
+                            Image(systemName: "camera.filters")
+                                .foregroundColor(.blue)
+                                .onTapGesture {
+                                    showCategorySelector.toggle()
+                                }
                         }
                         
                         List(bigModel.allTransactions) { transaction in
@@ -81,14 +89,9 @@ struct HomePiggyScreen: View {
                                          .font(.title3)
                                          .bold()
                                      Text("\(String(Date(timeIntervalSince1970: TimeInterval(transaction.date)).get(.hour))):\(String(Date(timeIntervalSince1970: TimeInterval(transaction.date)).get(.minute))):\(String(Date(timeIntervalSince1970: TimeInterval(transaction.date)).get(.second)))")
-                                     
-                                     //Date(timeIntervalSince1970: TimeInterval(transaction.date)).get(.day)
-                                     
                                  }
                                  
                                  Spacer()
-                                 
-                                 
                                  
                                  Text("\((transaction.recipientAccountID == bigModel.currentUserBankAccount?.accountId ?? "nil") ? "+" : "-")\(String(format: "%.1f", transaction.amount)) \(transaction.currency)")
                                      .font(.title3)
@@ -112,7 +115,7 @@ struct HomePiggyScreen: View {
                 
                 HStack {
                     Spacer()
-                        Text("Ajouter de l'argent")
+                        Text("add-money")
                             .foregroundColor(Color.white)
                             .fontWeight(.semibold)
                             .padding(10)
@@ -125,7 +128,7 @@ struct HomePiggyScreen: View {
                 
                 HStack {
                     Spacer()
-                        Text("Envoyer de l'argent")
+                        Text("send-money")
                             .foregroundColor(Color.black)
                             .fontWeight(.semibold)
                             .padding(10)
@@ -138,7 +141,7 @@ struct HomePiggyScreen: View {
                 
                 HStack {
                     Spacer()
-                        Text("Transférer de l'argent")
+                        Text("transfer-money")
                             .foregroundColor(Color.black)
                             .fontWeight(.semibold)
                             .padding(10)
@@ -148,11 +151,53 @@ struct HomePiggyScreen: View {
                 .onTapGesture {
                     bigModel.currentView = .PiggyTranscationScreen
                 }
-                
             }
             
         }.padding(20)
+            .sheet(isPresented: $showCategorySelector) {
+                VStack {
+                    
+                }
+            }
     }
+}
+
+extension String {
+    func currencySymbol() -> String {
+        if self == "EUR" {
+            return "€"
+        }
+        if self == "USD" {
+            return "$"
+        }
+        if self == "JPY" {
+            return "¥"
+        }
+        if self == "GBP" {
+            return "£"
+        }
+        if self == "KRW" {
+            return "₩"
+        }
+        else {
+            return self
+        }
+    }
+}
+
+
+struct FilterView: View {
+    
+    @Environment(\.dismiss) var dismiss
+
+        var body: some View {
+            ZStack {
+                Button("Dismiss Modal") {
+                    dismiss()
+                }
+            }
+        }
+    
 }
 
 extension Date {
@@ -174,5 +219,6 @@ struct HomePiggyScreen_Previews: PreviewProvider {
     static var previews: some View {
         HomePiggyScreen()
             .environmentObject(BigModel(shouldInjectMockedData: true))
+            .environment(\.locale, Locale.init(identifier: "en"))
     }
 }

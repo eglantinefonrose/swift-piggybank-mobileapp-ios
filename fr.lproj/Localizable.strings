@@ -1,0 +1,13 @@
+"username" = "Nom d'utilisateur";
+"sign-in" = "Connection";
+"home" = "Accueil";
+"transactions" = "Transactions";
+"add-money" = "Ajouter de l'argent";
+"send-money" = "Envoyer de l'argent";
+"transfer-money" = "Transférer de l'argent";
+"amount %@" = "Solde : %@";
+"no-charges" = "Aucun frais";
+"recipient" = "Destinataire";
+"account-details" = "Détails du compte";
+"currency %@" = "Devise : %@";
+"sign-out" = "Deconnexion";
