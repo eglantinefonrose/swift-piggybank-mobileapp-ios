@@ -12,6 +12,7 @@ struct HomePiggyScreen: View {
     @Environment(\.colorScheme) var theColorScheme
     @EnvironmentObject var bigModel: BigModel
     @State private var showCategorySelector = false
+    @State var selectedFilter = TransactionFilter.All
     
     var body: some View {
         VStack {
@@ -73,14 +74,14 @@ struct HomePiggyScreen: View {
                             Text("transactions")
                                 .font(.title2)
                             Spacer()
-                            Image(systemName: "camera.filters")
-                                .foregroundColor(.blue)
-                                .onTapGesture {
-                                    showCategorySelector.toggle()
+                            Picker("", selection: $selectedFilter.animation()) {
+                                ForEach(TransactionFilter.allFilters, id: \.self) { filter in
+                                    Text(filter.rawValue)
                                 }
+                            }
                         }
                         
-                        List(bigModel.allTransactions) { transaction in
+                        List(filteredTaskItems()) { transaction in
                             
                              HStack {
                                  
@@ -100,6 +101,15 @@ struct HomePiggyScreen: View {
                             .background(Color.gray)
                             .listRowBackground(Color.gray)
                         }.listStyle(PlainListStyle())
+                        .toolbar {
+                            ToolbarItem(placement: .confirmationAction) {
+                                Picker("", selection: $selectedFilter.animation()) {
+                                    ForEach(TransactionFilter.allFilters, id: \.self) { filter in
+                                        Text(filter.rawValue)
+                                    }
+                                }
+                            }
+                        }
                         
                     }.padding(20)
                     
@@ -160,6 +170,42 @@ struct HomePiggyScreen: View {
                 }
             }
     }
+    
+    private func filteredTaskItems() -> [TransactionDTOModel] {
+        
+        if selectedFilter == TransactionFilter.All {
+            return bigModel.allTransactions
+        }
+        
+        if selectedFilter == TransactionFilter.Gain {
+            var transactions: [TransactionDTOModel] = []
+            
+            for i in 0..<bigModel.allTransactions.count {
+                if (bigModel.allTransactions[i].recipientAccountID == bigModel.currentUserBankAccount?.accountId ?? "nil") {
+                    transactions.append(bigModel.allTransactions[i])
+                }
+                else {}
+            }
+            return transactions
+        }
+        
+        if selectedFilter == TransactionFilter.Waste {
+            var transactions: [TransactionDTOModel] = []
+            
+            for i in 0..<bigModel.allTransactions.count {
+                if (bigModel.allTransactions[i].senderAccountID == bigModel.currentUserBankAccount?.accountId ?? "nil") {
+                    transactions.append(bigModel.allTransactions[i])
+                }
+                else {}
+            }
+            return transactions
+        }
+        
+        return bigModel.allTransactions
+        
+    }
+
+    
 }
 
 extension String {
@@ -185,18 +231,15 @@ extension String {
     }
 }
 
-
-struct FilterView: View {
+enum TransactionFilter: String {
     
-    @Environment(\.dismiss) var dismiss
-
-        var body: some View {
-            ZStack {
-                Button("Dismiss Modal") {
-                    dismiss()
-                }
-            }
-        }
+    static var allFilters: [TransactionFilter] {
+        return [.All, .Gain, .Waste]
+    }
+    
+    case All = "All"
+    case Gain = "Gain"
+    case Waste = "Waste"
     
 }
 

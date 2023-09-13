@@ -13,7 +13,7 @@ struct PiggyBankApp: App {
         WindowGroup {
             BigRootView()
                 .environmentObject(BigModel())
-                .environment(\.locale, Locale.init(identifier: "es"))
+                .environment(\.locale, Locale.init(identifier: "ja"))
         }
     }
 }
