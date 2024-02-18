@@ -11,7 +11,10 @@
 		707210AE2A9D0EFE00E53CC0 /* TranscationDTOModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707210AD2A9D0EFE00E53CC0 /* TranscationDTOModel.swift */; };
 		707210B02A9E0DFB00E53CC0 /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707210AF2A9E0DFB00E53CC0 /* TransactionView.swift */; };
 		7077E7BD2A6AE26D002B445B /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 7077E7BC2A6AE26D002B445B /* Readme.md */; };
+		707FC5A02AF5647C00705953 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707FC59F2AF5647C00705953 /* QRCodeView.swift */; };
+		707FC5A22AF5671700705953 /* QR-Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707FC5A12AF5671700705953 /* QR-Scanner.swift */; };
 		708D8A8E2A8CB6DC000F1C0F /* PiggyAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D8A8D2A8CB6DC000F1C0F /* PiggyAccountView.swift */; };
+		709290612AF575810025D330 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 709290602AF575810025D330 /* CodeScanner */; };
 		70964C812A686D4B00C2F2DF /* PiggyBankApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70964C802A686D4B00C2F2DF /* PiggyBankApp.swift */; };
 		70964C832A686D4B00C2F2DF /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70964C822A686D4B00C2F2DF /* SignInView.swift */; };
 		70964C852A686D4B00C2F2DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70964C842A686D4B00C2F2DF /* Assets.xcassets */; };
@@ -26,6 +29,7 @@
 		70E39C452A69D36900506F02 /* AddMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E39C442A69D36900506F02 /* AddMoneyView.swift */; };
 		70E39C472A69DBFA00506F02 /* BigRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E39C462A69DBFA00506F02 /* BigRootView.swift */; };
 		70E39C492A69DC0C00506F02 /* BigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E39C482A69DC0C00506F02 /* BigModel.swift */; };
+		70EB1AF82AD00F2000EC1FCD /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EB1AF72AD00F2000EC1FCD /* SwiftUIView.swift */; };
 		70F27F412A818C720034FF05 /* BankAccountDTOModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F27F402A818C720034FF05 /* BankAccountDTOModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +58,8 @@
 		707210AD2A9D0EFE00E53CC0 /* TranscationDTOModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscationDTOModel.swift; sourceTree = "<group>"; };
 		707210AF2A9E0DFB00E53CC0 /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
 		7077E7BC2A6AE26D002B445B /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		707FC59F2AF5647C00705953 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		707FC5A12AF5671700705953 /* QR-Scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QR-Scanner.swift"; sourceTree = "<group>"; };
 		708D8A8D2A8CB6DC000F1C0F /* PiggyAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiggyAccountView.swift; sourceTree = "<group>"; };
 		70964C7D2A686D4B00C2F2DF /* PiggyBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiggyBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70964C802A686D4B00C2F2DF /* PiggyBankApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiggyBankApp.swift; sourceTree = "<group>"; };
@@ -71,6 +77,7 @@
 		70E39C442A69D36900506F02 /* AddMoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoneyView.swift; sourceTree = "<group>"; };
 		70E39C462A69DBFA00506F02 /* BigRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigRootView.swift; sourceTree = "<group>"; };
 		70E39C482A69DC0C00506F02 /* BigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigModel.swift; sourceTree = "<group>"; };
+		70EB1AF72AD00F2000EC1FCD /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		70F27F402A818C720034FF05 /* BankAccountDTOModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountDTOModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				709290612AF575810025D330 /* CodeScanner in Frameworks */,
 				70964CAC2A687C5F00C2F2DF /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,9 +114,12 @@
 				70964CB12A69AAED00C2F2DF /* HomePiggyScreen.swift */,
 				708D8A8D2A8CB6DC000F1C0F /* PiggyAccountView.swift */,
 				70964C822A686D4B00C2F2DF /* SignInView.swift */,
+				70EB1AF72AD00F2000EC1FCD /* SwiftUIView.swift */,
 				70E39C442A69D36900506F02 /* AddMoneyView.swift */,
 				70E18D722A8E72F90039484E /* SendMoneyView.swift */,
 				707210AF2A9E0DFB00E53CC0 /* TransactionView.swift */,
+				707FC59F2AF5647C00705953 /* QRCodeView.swift */,
+				707FC5A12AF5671700705953 /* QR-Scanner.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,6 +213,7 @@
 			name = PiggyBank;
 			packageProductDependencies = (
 				70964CAB2A687C5F00C2F2DF /* FirebaseAuth */,
+				709290602AF575810025D330 /* CodeScanner */,
 			);
 			productName = PiggyBank;
 			productReference = 70964C7D2A686D4B00C2F2DF /* PiggyBank.app */;
@@ -280,6 +292,7 @@
 			mainGroup = 70964C742A686D4B00C2F2DF;
 			packageReferences = (
 				70964CAA2A687C5F00C2F2DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				7092905F2AF575810025D330 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = 70964C7E2A686D4B00C2F2DF /* Products */;
 			projectDirPath = "";
@@ -325,6 +338,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70EB1AF82AD00F2000EC1FCD /* SwiftUIView.swift in Sources */,
+				707FC5A22AF5671700705953 /* QR-Scanner.swift in Sources */,
 				70E39C492A69DC0C00506F02 /* BigModel.swift in Sources */,
 				70E39C452A69D36900506F02 /* AddMoneyView.swift in Sources */,
 				70E39C472A69DBFA00506F02 /* BigRootView.swift in Sources */,
@@ -334,6 +349,7 @@
 				708D8A8E2A8CB6DC000F1C0F /* PiggyAccountView.swift in Sources */,
 				70964CB22A69AAED00C2F2DF /* HomePiggyScreen.swift in Sources */,
 				70964CAE2A69A6E500C2F2DF /* ViewEnum.swift in Sources */,
+				707FC5A02AF5647C00705953 /* QRCodeView.swift in Sources */,
 				70964C812A686D4B00C2F2DF /* PiggyBankApp.swift in Sources */,
 				70F27F412A818C720034FF05 /* BankAccountDTOModel.swift in Sources */,
 				707210AE2A9D0EFE00E53CC0 /* TranscationDTOModel.swift in Sources */,
@@ -516,11 +532,13 @@
 				DEVELOPMENT_TEAM = 27DU3FB9N5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera to scan QR Code";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -545,11 +563,13 @@
 				DEVELOPMENT_TEAM = 27DU3FB9N5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera to scan QR Code";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -681,6 +701,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7092905F2AF575810025D330 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		70964CAA2A687C5F00C2F2DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -692,6 +720,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		709290602AF575810025D330 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7092905F2AF575810025D330 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
 		70964CAB2A687C5F00C2F2DF /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 70964CAA2A687C5F00C2F2DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

@@ -77,10 +77,13 @@ struct TransactionView: View {
                  HStack {
                                                      
                      Spacer()
-                     
                      TextField("recipient", text: $reciepientAccountID)
                          .disableAutocorrection(true)
                          .autocapitalization(.none)
+                     Spacer()
+                     Image(systemName: "qrcode")
+                         .foregroundColor(.blue)
+                         .font(.headline)
                      
                  }
                  

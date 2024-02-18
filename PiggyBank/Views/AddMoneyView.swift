@@ -24,9 +24,11 @@ struct AddMoneyView: View {
                     .onTapGesture {
                         bigModel.currentView = .HomePiggyScreen
                     }
-                Text("add-money")
-                    .font(.largeTitle)
-                    .bold()
+                HStack {
+                    Text("add-money")
+                        .font(.largeTitle)
+                        .bold()
+                }
             }
             
             ZStack {

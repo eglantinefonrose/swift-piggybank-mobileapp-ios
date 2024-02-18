@@ -123,7 +123,7 @@ struct HomePiggyScreen: View {
             
             VStack {
                 
-                HStack {
+                /*HStack {
                     Spacer()
                         Text("add-money")
                             .foregroundColor(Color.white)
@@ -147,11 +147,24 @@ struct HomePiggyScreen: View {
                 .cornerRadius(15)
                 .onTapGesture {
                     bigModel.currentView = .SendMoneyScreen
-                }
+                }*/
                 
                 HStack {
                     Spacer()
                         Text("transfer-money")
+                            .foregroundColor(Color.white)
+                            .fontWeight(.semibold)
+                            .padding(10)
+                    Spacer()
+                }.background(Color.blue)
+                .cornerRadius(15)
+                .onTapGesture {
+                    bigModel.currentView = .PiggyTranscationScreen
+                }
+                
+                HStack {
+                    Spacer()
+                        Text("Recieve money")
                             .foregroundColor(Color.black)
                             .fontWeight(.semibold)
                             .padding(10)
@@ -159,7 +172,7 @@ struct HomePiggyScreen: View {
                 }.background(Color.gray)
                 .cornerRadius(15)
                 .onTapGesture {
-                    bigModel.currentView = .PiggyTranscationScreen
+                    bigModel.currentView = .SendMoneyScreen
                 }
             }
             

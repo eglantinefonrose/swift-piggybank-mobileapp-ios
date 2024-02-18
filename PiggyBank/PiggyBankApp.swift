@@ -11,6 +11,7 @@ import SwiftUI
 struct PiggyBankApp: App {
     var body: some Scene {
         WindowGroup {
+            //BigRootView()
             BigRootView()
                 .environmentObject(BigModel())
                 .environment(\.locale, Locale.init(identifier: "ja"))
