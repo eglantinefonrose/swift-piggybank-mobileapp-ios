@@ -8,7 +8,7 @@ This application is **meant** to be a demonstration for launching application cr
 ## Screenshots
 
 Login screen
-![Alt text](@docs/Login.png)
+![](@docs/Login.png)
 
 Main page with account details
 ![Alt text](@docs/HomeScreen.png)
