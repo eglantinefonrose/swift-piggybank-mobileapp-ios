@@ -33,7 +33,6 @@ class BigModel: ObservableObject {
         print("a")
     }
     
-    
     ///
     /// COMMENT ECRIRE UN TEST UNITAIRE AVEC SWIFT
     ///
@@ -44,6 +43,7 @@ class BigModel: ObservableObject {
     /// Mais, dans un test unitaire, quand on ne fait pas d'appel bloquant, on tombe sur le problème de la function de test qui fini avant la fin de l'exécution
     /// du callback (problème qu'on peut résoudre avec `waitForExpectations` and `expectation.fulfill()`).
     /// Cf : https://www.swiftbysundell.com/articles/unit-testing-asynchronous-swift-code/
+    ///
     ///
     func makePayment(amount: Float64, accountID: String, currency: String) async {
         
@@ -67,6 +67,7 @@ class BigModel: ObservableObject {
                 // Vérifier s'il y a des erreurs
                 if let error = error {
                     print("Erreur : \(error)")
+                    
                     return
                 }
 
@@ -294,6 +295,8 @@ class BigModel: ObservableObject {
         
     }*/
     
+    @Published var anyError: Bool = false
+    @Published var signInErrorMessage: String = ""
     
     func updateUserBankAccountDTO(accountId: String) async {
         
@@ -306,7 +309,8 @@ class BigModel: ObservableObject {
 
             // Convertir l'URL en objet URL
             guard let url = URL(string: urlString) else {
-                print("URL invalide")
+                anyError = true
+                signInErrorMessage = "URL invalide"
                 return
             }
 
@@ -317,6 +321,8 @@ class BigModel: ObservableObject {
             let task = session.dataTask(with: url) { data, response, error in
                 // Vérifier s'il y a des erreurs
                 if let error = error {
+                    self.anyError = true
+                    self.signInErrorMessage = "Erreur : Could not connect to the server."
                     print("Erreur : \(error)")
                     return
                 }
@@ -324,14 +330,16 @@ class BigModel: ObservableObject {
                 // Vérifier la réponse HTTP
                 if let httpResponse = response as? HTTPURLResponse {
                     if !(200...299).contains(httpResponse.statusCode) {
-                        print("La requête a échoué avec le code HTTP \(httpResponse.statusCode)")
+                        self.anyError = true
+                        self.signInErrorMessage = "La requête a échoué avec le code HTTP \(httpResponse.statusCode)"
                         return
                     }
                 }
 
                 // Vérifier s'il y a des données de réponse
                 guard let responseData = data else {
-                    print("Aucune donnée reçue")
+                    self.anyError = true
+                    self.signInErrorMessage = "Aucune donnée reçue"
                     return
                 }
                 
