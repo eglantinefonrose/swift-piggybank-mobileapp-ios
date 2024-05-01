@@ -10,7 +10,7 @@ import SwiftUI
 struct HomePiggyScreen: View {
     
     @Environment(\.colorScheme) var theColorScheme
-    @EnvironmentObject var bigModel: BigModel
+    @ObservedObject var bigModel: BigModel
     @State private var showCategorySelector = false
     @State var selectedFilter = TransactionFilter.All
     
@@ -273,8 +273,7 @@ func dateFromJd(jd : Int64) -> Date {
 
 struct HomePiggyScreen_Previews: PreviewProvider {
     static var previews: some View {
-        HomePiggyScreen()
-            .environmentObject(BigModel(shouldInjectMockedData: true))
+        HomePiggyScreen(bigModel: BigModel.shared)
             .environment(\.locale, Locale.init(identifier: "en"))
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PiggyAccountView: View {
     
-    @EnvironmentObject var bigModel: BigModel
+    @ObservedObject var bigModel: BigModel
     
     var body: some View {
         
@@ -83,7 +83,6 @@ struct PiggyAccountView: View {
 
 struct PiggyAccountView_Previews: PreviewProvider {
     static var previews: some View {
-        PiggyAccountView()
-            .environmentObject(BigModel(shouldInjectMockedData: true))
+        PiggyAccountView(bigModel: BigModel.shared)
     }
 }

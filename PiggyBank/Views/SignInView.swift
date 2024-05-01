@@ -9,9 +9,10 @@ import SwiftUI
 
 struct SignInView: View {
     
-    @EnvironmentObject var bigModel: BigModel
+    @ObservedObject var bigModel: BigModel
     @Environment(\.colorScheme) var theColorScheme
     @State var userName: String = ""
+    @State var serverOffline: Bool = false
     
     var body: some View {
         ZStack {
@@ -32,6 +33,9 @@ struct SignInView: View {
                 Text("sign-in")
                     .font(.largeTitle)
                     .bold()
+                    /*.onSubmit {
+                        bigModel.currentView = .HomePiggyScreen
+                    }*/
                 
                 Spacer()
                 
@@ -64,6 +68,10 @@ struct SignInView: View {
                 
                 Spacer()
                 
+                if bigModel.anyError {
+                    Text(bigModel.signInErrorMessage)
+                }
+                
                 HStack {
                     Spacer()
                         Text("sign-in")
@@ -91,7 +99,6 @@ struct SignInView: View {
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView()
-            .environmentObject(BigModel())
+        SignInView(bigModel: BigModel())
     }
 }

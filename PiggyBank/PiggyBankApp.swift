@@ -12,8 +12,7 @@ struct PiggyBankApp: App {
     var body: some Scene {
         WindowGroup {
             //BigRootView()
-            BigRootView()
-                .environmentObject(BigModel())
+            BigRootView(bigModel: BigModel.shared)
                 .environment(\.locale, Locale.init(identifier: "ja"))
         }
     }

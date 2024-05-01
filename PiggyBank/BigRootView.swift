@@ -9,29 +9,29 @@ import SwiftUI
 
 struct BigRootView: View {
     
-    @EnvironmentObject var bigModel: BigModel
+    @ObservedObject var bigModel: BigModel
     
     var body: some View {
         
         VStack {
             
             if (bigModel.currentView == .SignInView) {
-                SignInView()
+                SignInView(bigModel: BigModel.shared)
             }
             if (bigModel.currentView == .HomePiggyScreen) {
-                HomePiggyScreen()
+                HomePiggyScreen(bigModel: BigModel.shared)
             }
             if (bigModel.currentView == .AddMoneyScreen) {
-                AddMoneyView()
+                AddMoneyView(bigModel: BigModel.shared)
             }
             if (bigModel.currentView == .SendMoneyScreen) {
-                SendMoneyView()
+                SendMoneyView(bigModel: BigModel.shared)
             }
             if (bigModel.currentView == .PiggyAccountScreen) {
-                PiggyAccountView()
+                PiggyAccountView(bigModel: BigModel.shared)
             }
             if (bigModel.currentView == .PiggyTranscationScreen) {
-                TransactionView()
+                TransactionView(bigModel: BigModel.shared)
             }
             
         }
@@ -41,7 +41,7 @@ struct BigRootView: View {
 
 struct BigRootView_Previews: PreviewProvider {
     static var previews: some View {
-        BigRootView()
+        BigRootView(bigModel: BigModel.shared)
             .environmentObject(BigModel())
     }
 }

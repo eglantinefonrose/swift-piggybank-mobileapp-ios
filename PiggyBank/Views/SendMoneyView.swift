@@ -16,7 +16,7 @@ import SwiftUI
 
 struct SendMoneyView: View {
     
-    @EnvironmentObject var bigModel: BigModel
+    @ObservedObject var bigModel: BigModel
     @State var moneyAmount = ""
     @FocusState var focused: Bool?
     
@@ -99,7 +99,6 @@ struct SendMoneyView: View {
 
 struct SendMoneyView_Previews: PreviewProvider {
     static var previews: some View {
-        SendMoneyView()
-            .environmentObject(BigModel(shouldInjectMockedData: true))
+        SendMoneyView(bigModel: BigModel.shared)
     }
 }

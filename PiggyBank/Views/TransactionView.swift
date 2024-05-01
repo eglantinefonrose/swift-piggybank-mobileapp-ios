@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TransactionView: View {
     
-    @EnvironmentObject var bigModel: BigModel
+    @ObservedObject var bigModel: BigModel
     @State var moneyAmount = ""
     @FocusState var focused: Bool?
     @State var reciepientAccountID = ""
@@ -119,7 +119,6 @@ struct TransactionView: View {
 
 struct TransactionView_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionView()
-            .environmentObject(BigModel(shouldInjectMockedData: true))
+        TransactionView(bigModel: BigModel.shared)
     }
 }

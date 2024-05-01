@@ -29,7 +29,6 @@
 		70E39C452A69D36900506F02 /* AddMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E39C442A69D36900506F02 /* AddMoneyView.swift */; };
 		70E39C472A69DBFA00506F02 /* BigRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E39C462A69DBFA00506F02 /* BigRootView.swift */; };
 		70E39C492A69DC0C00506F02 /* BigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E39C482A69DC0C00506F02 /* BigModel.swift */; };
-		70EB1AF82AD00F2000EC1FCD /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EB1AF72AD00F2000EC1FCD /* SwiftUIView.swift */; };
 		70F27F412A818C720034FF05 /* BankAccountDTOModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F27F402A818C720034FF05 /* BankAccountDTOModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,7 +76,6 @@
 		70E39C442A69D36900506F02 /* AddMoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoneyView.swift; sourceTree = "<group>"; };
 		70E39C462A69DBFA00506F02 /* BigRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigRootView.swift; sourceTree = "<group>"; };
 		70E39C482A69DC0C00506F02 /* BigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigModel.swift; sourceTree = "<group>"; };
-		70EB1AF72AD00F2000EC1FCD /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		70F27F402A818C720034FF05 /* BankAccountDTOModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountDTOModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,7 +112,6 @@
 				70964CB12A69AAED00C2F2DF /* HomePiggyScreen.swift */,
 				708D8A8D2A8CB6DC000F1C0F /* PiggyAccountView.swift */,
 				70964C822A686D4B00C2F2DF /* SignInView.swift */,
-				70EB1AF72AD00F2000EC1FCD /* SwiftUIView.swift */,
 				70E39C442A69D36900506F02 /* AddMoneyView.swift */,
 				70E18D722A8E72F90039484E /* SendMoneyView.swift */,
 				707210AF2A9E0DFB00E53CC0 /* TransactionView.swift */,
@@ -338,7 +335,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70EB1AF82AD00F2000EC1FCD /* SwiftUIView.swift in Sources */,
 				707FC5A22AF5671700705953 /* QR-Scanner.swift in Sources */,
 				70E39C492A69DC0C00506F02 /* BigModel.swift in Sources */,
 				70E39C452A69D36900506F02 /* AddMoneyView.swift in Sources */,
@@ -527,9 +523,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 202405011026;
 				DEVELOPMENT_ASSET_PATHS = "\"PiggyBank/Preview Content\"";
-				DEVELOPMENT_TEAM = 27DU3FB9N5;
+				DEVELOPMENT_TEAM = 4LQFF9PJNU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera to scan QR Code";
@@ -544,7 +540,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.proutechos.sandbox.cli.tests.PiggyBank;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teevitylabs.experiments.piggybank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -558,9 +554,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 202405011026;
 				DEVELOPMENT_ASSET_PATHS = "\"PiggyBank/Preview Content\"";
-				DEVELOPMENT_TEAM = 27DU3FB9N5;
+				DEVELOPMENT_TEAM = 4LQFF9PJNU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera to scan QR Code";
@@ -575,7 +571,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.proutechos.sandbox.cli.tests.PiggyBank;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teevitylabs.experiments.piggybank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
